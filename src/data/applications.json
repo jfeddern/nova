@@ -1,0 +1,1291 @@
+[
+  {
+    "id": "app-001",
+    "name": "Customer Portal",
+    "description": "Frontend portal for end customers to manage their accounts and view services.",
+    "department": "Digital Experience",
+    "owner": {
+      "team": "Customer Web Team",
+      "contact_email": "customerweb@company.com",
+      "teams_channel": "#customer-web"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "frontend",
+      "customer-facing"
+    ],
+    "dependencies": [
+      "auth-service",
+      "user-profile-service",
+      "notification-service"
+    ],
+    "datastores": [
+      {
+        "id": "ds-001",
+        "name": "customer-portal-cache",
+        "type": "redis"
+      },
+      {
+        "id": "ds-002",
+        "name": "customer-sessions",
+        "type": "redis"
+      },
+      {
+        "id": "ds-003",
+        "name": "customer-data",
+        "type": "postgresql"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/customer-portal",
+      "documentation": "https://confluence.company.com/customer-portal",
+      "monitoring": "https://grafana.company.com/dashboard/123"
+    },
+    "health": "degraded",
+    "domain": "Customer Experience",
+    "brief": "User-facing web portal providing self-service capabilities and account management",
+    "customLinks": [
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/app-001"
+      },
+      {
+        "title": "Performance Dashboard",
+        "url": "https://perf.company.com/app-001"
+      }
+    ]
+  },
+  {
+    "id": "auth-service",
+    "name": "Authentication Service",
+    "description": "Centralized authentication and authorization service using OAuth 2.0 and JWT.",
+    "department": "Platform",
+    "owner": {
+      "team": "Platform Security Team",
+      "contact_email": "platform-security@company.com",
+      "teams_channel": "#platform-security"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "backend",
+      "security",
+      "infrastructure"
+    ],
+    "dependencies": [
+      "user-directory",
+      "session-store"
+    ],
+    "datastores": [
+      {
+        "id": "ds-003",
+        "name": "auth-users-db",
+        "type": "postgresql"
+      },
+      {
+        "id": "ds-004",
+        "name": "auth-sessions",
+        "type": "redis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/auth-service",
+      "documentation": "https://confluence.company.com/auth-service",
+      "monitoring": "https://grafana.company.com/dashboard/124"
+    },
+    "health": "healthy",
+    "domain": "Platform Services",
+    "brief": "Identity and access management service",
+    "customLinks": [
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/auth-service"
+      },
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/auth-service"
+      },
+      {
+        "title": "Security Scan",
+        "url": "https://security.company.com/auth-service"
+      },
+      {
+        "title": "Cost Dashboard",
+        "url": "https://cost.company.com/auth-service"
+      }
+    ]
+  },
+  {
+    "id": "user-profile-service",
+    "name": "User Profile Service",
+    "description": "Manages user profile data, preferences, and settings.",
+    "department": "Platform",
+    "owner": {
+      "team": "User Services Team",
+      "contact_email": "user-services@company.com",
+      "teams_channel": "#user-services"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "backend",
+      "user-data"
+    ],
+    "dependencies": [
+      "user-directory",
+      "file-storage-service"
+    ],
+    "datastores": [
+      {
+        "id": "ds-005",
+        "name": "user-profiles-db",
+        "type": "postgresql"
+      },
+      {
+        "id": "ds-006",
+        "name": "profile-images",
+        "type": "s3"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/user-profile-service",
+      "documentation": "https://confluence.company.com/user-profile-service",
+      "monitoring": "https://grafana.company.com/dashboard/125"
+    },
+    "health": "healthy",
+    "domain": "Platform Services",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "Cost Dashboard",
+        "url": "https://cost.company.com/user-profile-service"
+      },
+      {
+        "title": "Architecture Diagram",
+        "url": "https://diagrams.company.com/user-profile-service"
+      },
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/user-profile-service"
+      }
+    ]
+  },
+  {
+    "id": "notification-service",
+    "name": "Notification Service",
+    "description": "Multi-channel notification service supporting email, SMS, and push notifications.",
+    "department": "Platform",
+    "owner": {
+      "team": "Communication Team",
+      "contact_email": "communications@company.com",
+      "teams_channel": "#communications"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "backend",
+      "communication"
+    ],
+    "dependencies": [
+      "email-gateway",
+      "sms-gateway",
+      "push-notification-gateway"
+    ],
+    "datastores": [
+      {
+        "id": "ds-007",
+        "name": "notification-queue",
+        "type": "kafka"
+      },
+      {
+        "id": "ds-008",
+        "name": "notification-history",
+        "type": "mongodb"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/notification-service",
+      "documentation": "https://confluence.company.com/notification-service",
+      "monitoring": "https://grafana.company.com/dashboard/126"
+    },
+    "health": "healthy",
+    "domain": "Communication",
+    "brief": "Messaging service for notifications and communications",
+    "customLinks": [
+      {
+        "title": "Cost Dashboard",
+        "url": "https://cost.company.com/notification-service"
+      },
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/notification-service"
+      },
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/notification-service"
+      },
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/notification-service"
+      }
+    ]
+  },
+  {
+    "id": "payment-gateway",
+    "name": "Payment Gateway",
+    "description": "Handles payment processing, invoicing, and transaction management.",
+    "department": "Finance",
+    "owner": {
+      "team": "Payments Team",
+      "contact_email": "payments@company.com",
+      "teams_channel": "#payments"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "backend",
+      "payments",
+      "finance"
+    ],
+    "dependencies": [
+      "fraud-detection",
+      "invoice-service"
+    ],
+    "datastores": [
+      {
+        "id": "ds-009",
+        "name": "payments-db",
+        "type": "postgresql"
+      },
+      {
+        "id": "ds-010",
+        "name": "transaction-cache",
+        "type": "redis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/payment-gateway",
+      "documentation": "https://confluence.company.com/payment-gateway",
+      "monitoring": "https://grafana.company.com/dashboard/127"
+    },
+    "health": "healthy",
+    "domain": "Payments & Transactions",
+    "brief": "API gateway managing traffic routing, authentication, and rate limiting",
+    "customLinks": [
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/payment-gateway"
+      },
+      {
+        "title": "Changelog",
+        "url": "https://changelog.company.com/payment-gateway"
+      },
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/payment-gateway"
+      },
+      {
+        "title": "Incident Playbook",
+        "url": "https://playbook.company.com/payment-gateway"
+      }
+    ]
+  },
+  {
+    "id": "admin-dashboard",
+    "name": "Admin Dashboard",
+    "description": "Internal admin interface for managing users, content, and system configuration.",
+    "department": "Operations",
+    "owner": {
+      "team": "Admin Tools Team",
+      "contact_email": "admin-tools@company.com",
+      "teams_channel": "#admin-tools"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "frontend",
+      "internal"
+    ],
+    "dependencies": [
+      "auth-service",
+      "user-profile-service",
+      "content-management"
+    ],
+    "datastores": [
+      {
+        "id": "ds-011",
+        "name": "admin-cache",
+        "type": "redis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/admin-dashboard",
+      "documentation": "https://confluence.company.com/admin-dashboard",
+      "monitoring": "https://grafana.company.com/dashboard/128"
+    },
+    "health": "healthy",
+    "domain": "Operations & Infrastructure",
+    "brief": "Analytics and reporting dashboard with real-time data visualization",
+    "customLinks": [
+      {
+        "title": "Incident Playbook",
+        "url": "https://playbook.company.com/admin-dashboard"
+      },
+      {
+        "title": "Security Scan",
+        "url": "https://security.company.com/admin-dashboard"
+      }
+    ]
+  },
+  {
+    "id": "user-directory",
+    "name": "User Directory",
+    "description": "LDAP-based user directory service managing employee and customer identities.",
+    "department": "Platform",
+    "owner": {
+      "team": "Platform Security Team",
+      "contact_email": "platform-security@company.com",
+      "teams_channel": "#platform-security"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "backend",
+      "infrastructure",
+      "security"
+    ],
+    "dependencies": [],
+    "datastores": [
+      {
+        "id": "ds-012",
+        "name": "ldap-directory",
+        "type": "postgresql"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/user-directory",
+      "documentation": "https://confluence.company.com/user-directory",
+      "monitoring": "https://grafana.company.com/dashboard/129"
+    },
+    "health": "degraded",
+    "domain": "Platform Services",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/user-directory"
+      },
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/user-directory"
+      }
+    ]
+  },
+  {
+    "id": "analytics-platform",
+    "name": "Analytics Platform",
+    "description": "Data analytics and business intelligence platform for reporting and insights.",
+    "department": "Data & Analytics",
+    "owner": {
+      "team": "Analytics Team",
+      "contact_email": "analytics@company.com",
+      "teams_channel": "#analytics"
+    },
+    "environment": "production",
+    "criticality": "P3",
+    "tags": [
+      "analytics",
+      "data"
+    ],
+    "dependencies": [
+      "data-warehouse",
+      "reporting-service"
+    ],
+    "datastores": [
+      {
+        "id": "ds-013",
+        "name": "analytics-warehouse",
+        "type": "postgresql"
+      },
+      {
+        "id": "ds-014",
+        "name": "analytics-index",
+        "type": "elasticsearch"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/analytics-platform",
+      "documentation": "https://confluence.company.com/analytics-platform",
+      "monitoring": "https://grafana.company.com/dashboard/130"
+    },
+    "health": "healthy",
+    "domain": "Data & Analytics",
+    "brief": "Analytics and reporting dashboard with real-time data visualization",
+    "customLinks": [
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/analytics-platform"
+      },
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/analytics-platform"
+      }
+    ]
+  },
+  {
+    "id": "mobile-app-ios",
+    "name": "Mobile App (iOS)",
+    "description": "Native iOS application for customer engagement and services.",
+    "department": "Mobile",
+    "owner": {
+      "team": "iOS Team",
+      "contact_email": "ios@company.com",
+      "teams_channel": "#ios-team"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "mobile",
+      "customer-facing",
+      "ios"
+    ],
+    "dependencies": [
+      "api-gateway",
+      "auth-service",
+      "notification-service"
+    ],
+    "datastores": [],
+    "links": {
+      "repository": "https://github.com/company/mobile-app-ios",
+      "documentation": "https://confluence.company.com/mobile-app-ios",
+      "monitoring": "https://grafana.company.com/dashboard/131"
+    },
+    "health": "healthy",
+    "domain": "Mobile",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "Security Scan",
+        "url": "https://security.company.com/mobile-app-ios"
+      },
+      {
+        "title": "Architecture Diagram",
+        "url": "https://diagrams.company.com/mobile-app-ios"
+      },
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/mobile-app-ios"
+      }
+    ]
+  },
+  {
+    "id": "mobile-app-android",
+    "name": "Mobile App (Android)",
+    "description": "Native Android application for customer engagement and services.",
+    "department": "Mobile",
+    "owner": {
+      "team": "Android Team",
+      "contact_email": "android@company.com",
+      "teams_channel": "#android-team"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "mobile",
+      "customer-facing",
+      "android"
+    ],
+    "dependencies": [
+      "api-gateway",
+      "auth-service",
+      "notification-service"
+    ],
+    "datastores": [],
+    "links": {
+      "repository": "https://github.com/company/mobile-app-android",
+      "documentation": "https://confluence.company.com/mobile-app-android",
+      "monitoring": "https://grafana.company.com/dashboard/132"
+    },
+    "health": "degraded",
+    "domain": "Mobile",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/mobile-app-android"
+      },
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/mobile-app-android"
+      }
+    ]
+  },
+  {
+    "id": "api-gateway",
+    "name": "API Gateway",
+    "description": "Central API gateway handling routing, rate limiting, and API versioning.",
+    "department": "Platform",
+    "owner": {
+      "team": "Platform Team",
+      "contact_email": "platform@company.com",
+      "teams_channel": "#platform"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "backend",
+      "infrastructure",
+      "gateway"
+    ],
+    "dependencies": [
+      "auth-service",
+      "rate-limiter"
+    ],
+    "datastores": [
+      {
+        "id": "ds-015",
+        "name": "gateway-cache",
+        "type": "redis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/api-gateway",
+      "documentation": "https://confluence.company.com/api-gateway",
+      "monitoring": "https://grafana.company.com/dashboard/133"
+    },
+    "health": "healthy",
+    "domain": "Platform Services",
+    "brief": "API gateway managing traffic routing, authentication, and rate limiting",
+    "customLinks": [
+      {
+        "title": "Architecture Diagram",
+        "url": "https://diagrams.company.com/api-gateway"
+      },
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/api-gateway"
+      },
+      {
+        "title": "Changelog",
+        "url": "https://changelog.company.com/api-gateway"
+      },
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/api-gateway"
+      }
+    ]
+  },
+  {
+    "id": "content-management",
+    "name": "Content Management System",
+    "description": "CMS for managing marketing content, blog posts, and documentation.",
+    "department": "Marketing",
+    "owner": {
+      "team": "Content Team",
+      "contact_email": "content@company.com",
+      "teams_channel": "#content"
+    },
+    "environment": "production",
+    "criticality": "P3",
+    "tags": [
+      "backend",
+      "content"
+    ],
+    "dependencies": [
+      "file-storage-service",
+      "cdn-service"
+    ],
+    "datastores": [
+      {
+        "id": "ds-016",
+        "name": "content-db",
+        "type": "mongodb"
+      },
+      {
+        "id": "ds-017",
+        "name": "media-storage",
+        "type": "s3"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/content-management",
+      "documentation": "https://confluence.company.com/content-management",
+      "monitoring": "https://grafana.company.com/dashboard/134"
+    },
+    "health": "healthy",
+    "domain": "Marketing",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "Incident Playbook",
+        "url": "https://playbook.company.com/content-management"
+      },
+      {
+        "title": "Cost Dashboard",
+        "url": "https://cost.company.com/content-management"
+      },
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/content-management"
+      }
+    ]
+  },
+  {
+    "id": "fraud-detection",
+    "name": "Fraud Detection Engine",
+    "description": "ML-based fraud detection and prevention system for transactions.",
+    "department": "Security",
+    "owner": {
+      "team": "Security Engineering Team",
+      "contact_email": "security-eng@company.com",
+      "teams_channel": "#security-eng"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "backend",
+      "security",
+      "ml"
+    ],
+    "dependencies": [
+      "ml-platform",
+      "risk-scoring"
+    ],
+    "datastores": [
+      {
+        "id": "ds-018",
+        "name": "fraud-models",
+        "type": "s3"
+      },
+      {
+        "id": "ds-019",
+        "name": "fraud-events",
+        "type": "kafka"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/fraud-detection",
+      "documentation": "https://confluence.company.com/fraud-detection",
+      "monitoring": "https://grafana.company.com/dashboard/135"
+    },
+    "health": "degraded",
+    "domain": "Security",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/fraud-detection"
+      },
+      {
+        "title": "Changelog",
+        "url": "https://changelog.company.com/fraud-detection"
+      },
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/fraud-detection"
+      },
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/fraud-detection"
+      }
+    ]
+  },
+  {
+    "id": "session-store",
+    "name": "Session Store",
+    "description": "Redis-based distributed session management service.",
+    "department": "Platform",
+    "owner": {
+      "team": "Platform Team",
+      "contact_email": "platform@company.com",
+      "teams_channel": "#platform"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "backend",
+      "infrastructure",
+      "cache"
+    ],
+    "dependencies": [],
+    "datastores": [
+      {
+        "id": "ds-020",
+        "name": "sessions-redis",
+        "type": "redis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/session-store",
+      "documentation": "https://confluence.company.com/session-store",
+      "monitoring": "https://grafana.company.com/dashboard/136"
+    },
+    "health": "degraded",
+    "domain": "Platform Services",
+    "brief": "Data storage service with caching and persistence layers",
+    "customLinks": [
+      {
+        "title": "Security Scan",
+        "url": "https://security.company.com/session-store"
+      },
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/session-store"
+      },
+      {
+        "title": "Performance Dashboard",
+        "url": "https://perf.company.com/session-store"
+      },
+      {
+        "title": "Changelog",
+        "url": "https://changelog.company.com/session-store"
+      }
+    ]
+  },
+  {
+    "id": "file-storage-service",
+    "name": "File Storage Service",
+    "description": "S3-compatible object storage service for file uploads and media.",
+    "department": "Platform",
+    "owner": {
+      "team": "Infrastructure Team",
+      "contact_email": "infrastructure@company.com",
+      "teams_channel": "#infrastructure"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "backend",
+      "infrastructure",
+      "storage"
+    ],
+    "dependencies": [
+      "cdn-service"
+    ],
+    "datastores": [
+      {
+        "id": "ds-021",
+        "name": "files-bucket",
+        "type": "s3"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/file-storage-service",
+      "documentation": "https://confluence.company.com/file-storage-service",
+      "monitoring": "https://grafana.company.com/dashboard/137"
+    },
+    "health": "degraded",
+    "domain": "Platform Services",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "Security Scan",
+        "url": "https://security.company.com/file-storage-service"
+      },
+      {
+        "title": "Cost Dashboard",
+        "url": "https://cost.company.com/file-storage-service"
+      },
+      {
+        "title": "Incident Playbook",
+        "url": "https://playbook.company.com/file-storage-service"
+      },
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/file-storage-service"
+      }
+    ]
+  },
+  {
+    "id": "email-gateway",
+    "name": "Email Gateway",
+    "description": "SMTP gateway for sending transactional and marketing emails.",
+    "department": "Platform",
+    "owner": {
+      "team": "Communication Team",
+      "contact_email": "communications@company.com",
+      "teams_channel": "#communications"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "backend",
+      "communication"
+    ],
+    "dependencies": [],
+    "datastores": [
+      {
+        "id": "ds-022",
+        "name": "email-queue",
+        "type": "kafka"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/email-gateway",
+      "documentation": "https://confluence.company.com/email-gateway",
+      "monitoring": "https://grafana.company.com/dashboard/138"
+    },
+    "health": "degraded",
+    "domain": "Platform Services",
+    "brief": "API gateway managing traffic routing, authentication, and rate limiting",
+    "customLinks": [
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/email-gateway"
+      },
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/email-gateway"
+      },
+      {
+        "title": "Security Scan",
+        "url": "https://security.company.com/email-gateway"
+      },
+      {
+        "title": "Performance Dashboard",
+        "url": "https://perf.company.com/email-gateway"
+      }
+    ]
+  },
+  {
+    "id": "sms-gateway",
+    "name": "SMS Gateway",
+    "description": "Gateway for sending SMS notifications via multiple providers.",
+    "department": "Platform",
+    "owner": {
+      "team": "Communication Team",
+      "contact_email": "communications@company.com",
+      "teams_channel": "#communications"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "backend",
+      "communication"
+    ],
+    "dependencies": [],
+    "datastores": [
+      {
+        "id": "ds-023",
+        "name": "sms-queue",
+        "type": "kafka"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/sms-gateway",
+      "documentation": "https://confluence.company.com/sms-gateway",
+      "monitoring": "https://grafana.company.com/dashboard/139"
+    },
+    "health": "degraded",
+    "domain": "Communication",
+    "brief": "API gateway managing traffic routing, authentication, and rate limiting",
+    "customLinks": [
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/sms-gateway"
+      },
+      {
+        "title": "Architecture Diagram",
+        "url": "https://diagrams.company.com/sms-gateway"
+      },
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/sms-gateway"
+      }
+    ]
+  },
+  {
+    "id": "push-notification-gateway",
+    "name": "Push Notification Gateway",
+    "description": "Service for sending push notifications to mobile apps via FCM and APNS.",
+    "department": "Platform",
+    "owner": {
+      "team": "Communication Team",
+      "contact_email": "communications@company.com",
+      "teams_channel": "#communications"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "backend",
+      "communication",
+      "mobile"
+    ],
+    "dependencies": [],
+    "datastores": [
+      {
+        "id": "ds-024",
+        "name": "push-queue",
+        "type": "kafka"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/push-notification-gateway",
+      "documentation": "https://confluence.company.com/push-notification-gateway",
+      "monitoring": "https://grafana.company.com/dashboard/140"
+    },
+    "health": "critical",
+    "domain": "Platform Services",
+    "brief": "API gateway managing traffic routing, authentication, and rate limiting",
+    "customLinks": [
+      {
+        "title": "Security Scan",
+        "url": "https://security.company.com/push-notification-gateway"
+      },
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/push-notification-gateway"
+      }
+    ]
+  },
+  {
+    "id": "invoice-service",
+    "name": "Invoice Service",
+    "description": "Generates and manages invoices for customer transactions.",
+    "department": "Finance",
+    "owner": {
+      "team": "Billing Team",
+      "contact_email": "billing@company.com",
+      "teams_channel": "#billing"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "backend",
+      "finance"
+    ],
+    "dependencies": [
+      "payment-gateway",
+      "pdf-generator"
+    ],
+    "datastores": [
+      {
+        "id": "ds-025",
+        "name": "invoices-db",
+        "type": "postgresql"
+      },
+      {
+        "id": "ds-026",
+        "name": "invoice-pdfs",
+        "type": "s3"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/invoice-service",
+      "documentation": "https://confluence.company.com/invoice-service",
+      "monitoring": "https://grafana.company.com/dashboard/141"
+    },
+    "health": "critical",
+    "domain": "Finance",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/invoice-service"
+      },
+      {
+        "title": "Architecture Diagram",
+        "url": "https://diagrams.company.com/invoice-service"
+      },
+      {
+        "title": "Runbook",
+        "url": "https://runbook.company.com/invoice-service"
+      },
+      {
+        "title": "Security Scan",
+        "url": "https://security.company.com/invoice-service"
+      }
+    ]
+  },
+  {
+    "id": "data-warehouse",
+    "name": "Data Warehouse",
+    "description": "Central data warehouse for business intelligence and analytics.",
+    "department": "Data & Analytics",
+    "owner": {
+      "team": "Data Engineering Team",
+      "contact_email": "data-eng@company.com",
+      "teams_channel": "#data-eng"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "data",
+      "analytics",
+      "infrastructure"
+    ],
+    "dependencies": [
+      "data-pipeline"
+    ],
+    "datastores": [
+      {
+        "id": "ds-027",
+        "name": "warehouse-db",
+        "type": "postgresql"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/data-warehouse",
+      "documentation": "https://confluence.company.com/data-warehouse",
+      "monitoring": "https://grafana.company.com/dashboard/142"
+    },
+    "health": "critical",
+    "domain": "Data & Analytics",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/data-warehouse"
+      },
+      {
+        "title": "Performance Dashboard",
+        "url": "https://perf.company.com/data-warehouse"
+      }
+    ]
+  },
+  {
+    "id": "reporting-service",
+    "name": "Reporting Service",
+    "description": "Generates custom reports and scheduled analytics dashboards.",
+    "department": "Data & Analytics",
+    "owner": {
+      "team": "Analytics Team",
+      "contact_email": "analytics@company.com",
+      "teams_channel": "#analytics"
+    },
+    "environment": "production",
+    "criticality": "P3",
+    "tags": [
+      "analytics",
+      "reporting"
+    ],
+    "dependencies": [
+      "data-warehouse"
+    ],
+    "datastores": [
+      {
+        "id": "ds-028",
+        "name": "reports-cache",
+        "type": "redis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/reporting-service",
+      "documentation": "https://confluence.company.com/reporting-service",
+      "monitoring": "https://grafana.company.com/dashboard/143"
+    },
+    "health": "healthy",
+    "domain": "Data & Analytics",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "Incident Playbook",
+        "url": "https://playbook.company.com/reporting-service"
+      },
+      {
+        "title": "Cost Dashboard",
+        "url": "https://cost.company.com/reporting-service"
+      },
+      {
+        "title": "Architecture Diagram",
+        "url": "https://diagrams.company.com/reporting-service"
+      },
+      {
+        "title": "Performance Dashboard",
+        "url": "https://perf.company.com/reporting-service"
+      }
+    ]
+  },
+  {
+    "id": "ml-platform",
+    "name": "Machine Learning Platform",
+    "description": "Platform for training, deploying, and monitoring ML models.",
+    "department": "Data & Analytics",
+    "owner": {
+      "team": "ML Engineering Team",
+      "contact_email": "ml-eng@company.com",
+      "teams_channel": "#ml-eng"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "ml",
+      "infrastructure"
+    ],
+    "dependencies": [
+      "data-warehouse",
+      "model-registry"
+    ],
+    "datastores": [
+      {
+        "id": "ds-029",
+        "name": "ml-models",
+        "type": "s3"
+      },
+      {
+        "id": "ds-030",
+        "name": "training-data",
+        "type": "s3"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/ml-platform",
+      "documentation": "https://confluence.company.com/ml-platform",
+      "monitoring": "https://grafana.company.com/dashboard/144"
+    },
+    "health": "healthy",
+    "domain": "Data & Analytics",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "Architecture Diagram",
+        "url": "https://diagrams.company.com/ml-platform"
+      },
+      {
+        "title": "Incident Playbook",
+        "url": "https://playbook.company.com/ml-platform"
+      },
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/ml-platform"
+      }
+    ]
+  },
+  {
+    "id": "cdn-service",
+    "name": "CDN Service",
+    "description": "Content delivery network for serving static assets globally.",
+    "department": "Platform",
+    "owner": {
+      "team": "Infrastructure Team",
+      "contact_email": "infrastructure@company.com",
+      "teams_channel": "#infrastructure"
+    },
+    "environment": "production",
+    "criticality": "P2",
+    "tags": [
+      "infrastructure",
+      "cdn"
+    ],
+    "dependencies": [],
+    "datastores": [],
+    "links": {
+      "repository": "https://github.com/company/cdn-service",
+      "documentation": "https://confluence.company.com/cdn-service",
+      "monitoring": "https://grafana.company.com/dashboard/145"
+    },
+    "health": "healthy",
+    "domain": "Platform Services",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/cdn-service"
+      },
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/cdn-service"
+      }
+    ]
+  },
+  {
+    "id": "rate-limiter",
+    "name": "Rate Limiter",
+    "description": "Distributed rate limiting service for API protection.",
+    "department": "Platform",
+    "owner": {
+      "team": "Platform Team",
+      "contact_email": "platform@company.com",
+      "teams_channel": "#platform"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "backend",
+      "infrastructure",
+      "security"
+    ],
+    "dependencies": [],
+    "datastores": [
+      {
+        "id": "ds-031",
+        "name": "rate-limits",
+        "type": "redis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/rate-limiter",
+      "documentation": "https://confluence.company.com/rate-limiter",
+      "monitoring": "https://grafana.company.com/dashboard/146"
+    },
+    "health": "healthy",
+    "domain": "Platform Services",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "API Documentation",
+        "url": "https://api-docs.company.com/rate-limiter"
+      },
+      {
+        "title": "Performance Dashboard",
+        "url": "https://perf.company.com/rate-limiter"
+      },
+      {
+        "title": "SLA Dashboard",
+        "url": "https://sla.company.com/rate-limiter"
+      }
+    ]
+  },
+  {
+    "id": "risk-scoring",
+    "name": "Risk Scoring Service",
+    "description": "Real-time risk assessment for transactions and user activities.",
+    "department": "Security",
+    "owner": {
+      "team": "Security Engineering Team",
+      "contact_email": "security-eng@company.com",
+      "teams_channel": "#security-eng"
+    },
+    "environment": "production",
+    "criticality": "P1",
+    "tags": [
+      "backend",
+      "security",
+      "ml"
+    ],
+    "dependencies": [
+      "ml-platform"
+    ],
+    "datastores": [
+      {
+        "id": "ds-032",
+        "name": "risk-scores-cache",
+        "type": "redis"
+      },
+      {
+        "id": "ds-033",
+        "name": "risk-events",
+        "type": "kafka"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/company/risk-scoring",
+      "documentation": "https://confluence.company.com/risk-scoring",
+      "monitoring": "https://grafana.company.com/dashboard/147"
+    },
+    "health": "degraded",
+    "domain": "Security",
+    "brief": "Backend microservice handling business logic and data processing",
+    "customLinks": [
+      {
+        "title": "Incident Playbook",
+        "url": "https://playbook.company.com/risk-scoring"
+      },
+      {
+        "title": "Deployment Guide",
+        "url": "https://deploy.company.com/risk-scoring"
+      }
+    ]
+  }
+]

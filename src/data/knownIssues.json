@@ -1,0 +1,321 @@
+[
+  {
+    "id": "issue-001",
+    "application_id": "app-001",
+    "title": "Login page returns HTTP 500 after session timeout",
+    "symptoms": [
+      "Users receive 'Internal Server Error' after being idle for 30+ minutes",
+      "Browser console shows 401 unauthorized on refresh",
+      "Session cookie appears to be present but invalid"
+    ],
+    "possible_causes": [
+      "Expired JWT token not handled correctly by frontend",
+      "Session store not cleared after logout",
+      "Redis cache eviction policy removing active sessions"
+    ],
+    "resolution_steps": [
+      "Ask user to clear browser cookies and try again",
+      "Verify Redis session store is not full (check memory usage)",
+      "Restart auth-service pod if issue persists",
+      "Check auth-service logs for token validation errors",
+      "If recurring, escalate to Customer Web Team"
+    ],
+    "severity": "Medium",
+    "category": "Authentication",
+    "affected_components": ["auth-service", "customer-portal-cache"],
+    "tags": ["authentication", "session", "frontend", "jwt"],
+    "owner_team": "Customer Web Team",
+    "last_updated": "2025-10-28T08:15:00Z",
+    "related_tickets": ["INC-1012", "INC-1034", "INC-1089"],
+    "resolution_confidence": 85
+  },
+  {
+    "id": "issue-002",
+    "application_id": "app-001",
+    "title": "Slow page load times during peak hours",
+    "symptoms": [
+      "Dashboard takes 15-20 seconds to load between 9 AM - 11 AM",
+      "API response times exceed 5 seconds",
+      "Users report timeouts on profile page"
+    ],
+    "possible_causes": [
+      "Database connection pool exhaustion",
+      "Missing database indexes on user_profile table",
+      "Cache hit rate drops during high traffic",
+      "CDN not configured for static assets"
+    ],
+    "resolution_steps": [
+      "Check database connection pool metrics in Grafana",
+      "Add indexes on frequently queried columns (user_id, created_at)",
+      "Increase Redis cache size if memory allows",
+      "Enable CDN caching for static assets",
+      "Consider implementing query result caching"
+    ],
+    "severity": "High",
+    "category": "Performance",
+    "affected_components": ["customer-data", "customer-portal-cache"],
+    "tags": ["performance", "database", "caching", "peak-hours"],
+    "owner_team": "Customer Web Team",
+    "last_updated": "2025-10-25T14:30:00Z",
+    "related_tickets": ["INC-1156", "INC-1178"],
+    "resolution_confidence": 92
+  },
+  {
+    "id": "issue-003",
+    "application_id": "app-001",
+    "title": "Profile update fails silently without error message",
+    "symptoms": [
+      "User clicks 'Save' but nothing happens",
+      "No error message displayed to user",
+      "Network tab shows 400 Bad Request response",
+      "Changes are not persisted in database"
+    ],
+    "possible_causes": [
+      "Frontend validation not matching backend schema",
+      "API endpoint expecting different field format",
+      "CSRF token mismatch",
+      "Missing required fields not caught by frontend validation"
+    ],
+    "resolution_steps": [
+      "Check browser console for JavaScript errors",
+      "Verify API request payload matches expected schema",
+      "Ensure CSRF token is included in request headers",
+      "Add proper error handling in frontend code",
+      "Display user-friendly error messages"
+    ],
+    "severity": "Medium",
+    "category": "UI/UX",
+    "affected_components": ["customer-data"],
+    "tags": ["frontend", "validation", "user-experience"],
+    "owner_team": "Customer Web Team",
+    "last_updated": "2025-10-22T10:00:00Z",
+    "related_tickets": ["INC-1201"],
+    "resolution_confidence": 78
+  },
+  {
+    "id": "issue-004",
+    "application_id": "app-002",
+    "title": "Payment service timeout during high transaction volume",
+    "symptoms": [
+      "Payment confirmation page hangs indefinitely",
+      "Users receive 'Request Timeout' after 30 seconds",
+      "Payment may or may not be processed (inconsistent state)",
+      "Error rate spikes in payment-service logs"
+    ],
+    "possible_causes": [
+      "Payment gateway API response time degradation",
+      "Insufficient worker processes to handle concurrent requests",
+      "Database lock contention on transaction table",
+      "Network latency to external payment provider"
+    ],
+    "resolution_steps": [
+      "Check payment gateway status page for outages",
+      "Scale up payment-service workers temporarily",
+      "Implement idempotency keys to prevent duplicate charges",
+      "Add circuit breaker pattern for payment gateway calls",
+      "Review database query performance on transaction inserts",
+      "Contact payment provider if issue persists"
+    ],
+    "severity": "Critical",
+    "category": "Integration",
+    "affected_components": ["payment-gateway", "transaction-db"],
+    "tags": ["payment", "timeout", "integration", "critical"],
+    "owner_team": "Payment Team",
+    "last_updated": "2025-10-27T16:45:00Z",
+    "related_tickets": ["INC-1301", "INC-1305", "INC-1312"],
+    "resolution_confidence": 88
+  },
+  {
+    "id": "issue-005",
+    "application_id": "app-003",
+    "title": "User profile service returns stale data after update",
+    "symptoms": [
+      "User updates profile information but sees old data on refresh",
+      "Changes take 5-10 minutes to appear",
+      "Different microservices show different versions of user data"
+    ],
+    "possible_causes": [
+      "Cache invalidation not triggered after update",
+      "Multiple cache layers with different TTLs",
+      "Event bus message not propagating to all consumers",
+      "CDN edge caching user-specific data"
+    ],
+    "resolution_steps": [
+      "Manually invalidate cache for affected user",
+      "Check event bus logs for message delivery failures",
+      "Review cache invalidation logic in user-profile-service",
+      "Ensure cache-control headers prevent user data caching",
+      "Consider implementing cache versioning strategy"
+    ],
+    "severity": "Medium",
+    "category": "Backend",
+    "affected_components": ["user-profile-cache", "user-profile-db"],
+    "tags": ["caching", "consistency", "backend"],
+    "owner_team": "User Services Team",
+    "last_updated": "2025-10-26T11:20:00Z",
+    "related_tickets": ["INC-1245"],
+    "resolution_confidence": 90
+  },
+  {
+    "id": "issue-006",
+    "application_id": "app-004",
+    "title": "Search service returns incomplete results",
+    "symptoms": [
+      "Newly added products don't appear in search for 1-2 hours",
+      "Search results missing items that exist in database",
+      "Some users report seeing results, others don't"
+    ],
+    "possible_causes": [
+      "Elasticsearch index not syncing properly",
+      "Product indexing job failing silently",
+      "Index sharding causing routing issues",
+      "Replication lag in Elasticsearch cluster"
+    ],
+    "resolution_steps": [
+      "Check Elasticsearch cluster health status",
+      "Verify indexing job logs for errors",
+      "Manually reindex affected products",
+      "Review index mapping configuration",
+      "Check network connectivity between app and ES cluster",
+      "Consider increasing index refresh interval"
+    ],
+    "severity": "High",
+    "category": "Database",
+    "affected_components": ["product-search-index"],
+    "tags": ["search", "elasticsearch", "indexing"],
+    "owner_team": "Search Team",
+    "last_updated": "2025-10-24T09:30:00Z",
+    "related_tickets": ["INC-1190", "INC-1199"],
+    "resolution_confidence": 82
+  },
+  {
+    "id": "issue-007",
+    "application_id": "app-005",
+    "title": "Notification service sending duplicate emails",
+    "symptoms": [
+      "Users receive 2-3 copies of the same notification email",
+      "Duplicates arrive within seconds of each other",
+      "Issue occurs intermittently, not for all notifications"
+    ],
+    "possible_causes": [
+      "Message queue consumer processing message multiple times",
+      "Idempotency check not working correctly",
+      "Retry logic triggering before original request completes",
+      "Database unique constraint not enforced"
+    ],
+    "resolution_steps": [
+      "Add idempotency key to notification requests",
+      "Implement deduplication logic in consumer",
+      "Check message queue visibility timeout settings",
+      "Add unique constraint on notification_id in database",
+      "Review retry policy configuration"
+    ],
+    "severity": "Low",
+    "category": "Backend",
+    "affected_components": ["notification-queue"],
+    "tags": ["notifications", "email", "duplicates"],
+    "owner_team": "Notifications Team",
+    "last_updated": "2025-10-20T15:00:00Z",
+    "related_tickets": ["INC-1098"],
+    "resolution_confidence": 95
+  },
+  {
+    "id": "issue-008",
+    "application_id": "app-006",
+    "title": "Report generation fails for large date ranges",
+    "symptoms": [
+      "Report export times out after 60 seconds",
+      "Success for date ranges < 30 days, fails for > 30 days",
+      "Memory usage spikes during report generation",
+      "Worker process crashes without error message"
+    ],
+    "possible_causes": [
+      "Loading entire dataset into memory at once",
+      "No pagination in database query",
+      "Insufficient worker memory allocation",
+      "Inefficient data processing algorithm"
+    ],
+    "resolution_steps": [
+      "Implement cursor-based pagination for large datasets",
+      "Process data in batches instead of all at once",
+      "Increase worker memory limits",
+      "Add background job for large reports with email notification",
+      "Optimize database query with proper indexes",
+      "Consider pre-aggregating common report metrics"
+    ],
+    "severity": "Medium",
+    "category": "Performance",
+    "affected_components": ["analytics-db", "report-worker"],
+    "tags": ["reporting", "memory", "performance"],
+    "owner_team": "Analytics Team",
+    "last_updated": "2025-10-23T13:45:00Z",
+    "related_tickets": ["INC-1167"],
+    "resolution_confidence": 87
+  },
+  {
+    "id": "issue-009",
+    "application_id": "app-007",
+    "title": "API gateway returns 502 Bad Gateway intermittently",
+    "symptoms": [
+      "Random 502 errors during normal operation",
+      "Issue occurs 1-2 times per hour",
+      "Retry immediately usually succeeds",
+      "No pattern to timing or specific endpoints"
+    ],
+    "possible_causes": [
+      "Upstream service health check failing",
+      "Network packet loss between gateway and services",
+      "Service pods restarting during deployment",
+      "Load balancer connection pool exhaustion"
+    ],
+    "resolution_steps": [
+      "Check upstream service logs for errors or restarts",
+      "Review network metrics for packet loss",
+      "Verify health check configuration is appropriate",
+      "Increase connection timeout settings",
+      "Implement retry logic with exponential backoff",
+      "Check Kubernetes events for pod evictions"
+    ],
+    "severity": "High",
+    "category": "Network",
+    "affected_components": ["api-gateway"],
+    "tags": ["gateway", "network", "502"],
+    "owner_team": "Platform Team",
+    "last_updated": "2025-10-28T07:00:00Z",
+    "related_tickets": ["INC-1320", "INC-1328"],
+    "resolution_confidence": 75
+  },
+  {
+    "id": "issue-010",
+    "application_id": "app-001",
+    "title": "Mobile app crashes on iOS when uploading profile picture",
+    "symptoms": [
+      "App crashes immediately after selecting photo from gallery",
+      "Issue only affects iOS 17+ devices",
+      "Android version works fine",
+      "Crash log shows memory warning before crash"
+    ],
+    "possible_causes": [
+      "Image not being compressed before upload",
+      "Memory leak in image processing library",
+      "iOS permission handling not properly implemented",
+      "Large image files exceeding memory limits"
+    ],
+    "resolution_steps": [
+      "Implement image compression before upload",
+      "Add memory usage monitoring",
+      "Request proper iOS photo library permissions",
+      "Limit max upload size to 5MB",
+      "Update image processing library to latest version",
+      "Test with various image formats and sizes"
+    ],
+    "severity": "High",
+    "category": "UI/UX",
+    "affected_components": ["customer-data"],
+    "tags": ["mobile", "ios", "crash", "upload"],
+    "owner_team": "Customer Web Team",
+    "last_updated": "2025-10-21T10:30:00Z",
+    "related_tickets": ["INC-1145"],
+    "resolution_confidence": 80
+  }
+]

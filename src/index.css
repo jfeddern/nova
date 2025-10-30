@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: 'Inter var', ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(15% 0.01 270);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(15% 0.01 270);
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(15% 0.01 270);
+  --color-primary: oklch(55% 0.22 260);
+  --color-primary-foreground: oklch(99% 0 0);
+  --color-secondary: oklch(96% 0.01 260);
+  --color-secondary-foreground: oklch(20% 0.01 270);
+  --color-muted: oklch(96% 0.01 260);
+  --color-muted-foreground: oklch(50% 0.01 260);
+  --color-accent: oklch(96% 0.01 260);
+  --color-accent-foreground: oklch(20% 0.01 270);
+  --color-destructive: oklch(60% 0.22 20);
+  --color-destructive-foreground: oklch(99% 0 0);
+  --color-border: oklch(90% 0.01 260);
+  --color-input: oklch(90% 0.01 260);
+  --color-ring: oklch(55% 0.22 260);
+  --color-success: oklch(60% 0.18 145);
+  --color-warning: oklch(75% 0.15 85);
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.dark {
+  --color-background: #0A0E27;
+  --color-foreground: #E8EAF6;
+  --color-card: #12172E;
+  --color-card-foreground: #E8EAF6;
+  --color-popover: #12172E;
+  --color-popover-foreground: #E8EAF6;
+  --color-primary: #7C3AED;
+  --color-primary-foreground: #E8EAF6;
+  --color-secondary: #1A1F3A;
+  --color-secondary-foreground: #E8EAF6;
+  --color-muted: #1A1F3A;
+  --color-muted-foreground: #9FA8DA;
+  --color-accent: #1A1F3A;
+  --color-accent-foreground: #E8EAF6;
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #E8EAF6;
+  --color-border: #1E2442;
+  --color-input: #12172E;
+  --color-ring: #7C3AED;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.7), 0 8px 10px -6px rgb(0 0 0 / 0.6);
+}
+
+* {
+  border-color: var(--color-border);
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+body.dark {
+  line-height: 1.65;
+}
+
+/* ReactFlow theme overrides for light/dark mode */
+.react-flow {
+  background-color: #ffffff !important;
+}
+
+.dark .react-flow {
+  background-color: #111827 !important;
+}
+
+.react-flow__pane {
+  background-color: #ffffff !important;
+}
+
+.dark .react-flow__pane {
+  background-color: #111827 !important;
+}
+
+.react-flow__viewport {
+  background-color: transparent !important;
+}
+
+/* ReactFlow controls styling */
+.react-flow__controls {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .react-flow__controls {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+}
+
+.react-flow__controls-button {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+
+.dark .react-flow__controls-button {
+  background-color: #1f2937;
+  border-bottom: 1px solid #374151;
+  color: #e5e7eb;
+}
+
+.react-flow__controls-button:hover {
+  background-color: #f3f4f6;
+}
+
+.dark .react-flow__controls-button:hover {
+  background-color: #374151;
+}
+
+/* ReactFlow minimap styling */
+.react-flow__minimap {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .react-flow__minimap {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+}

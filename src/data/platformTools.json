@@ -1,0 +1,503 @@
+[
+  {
+    "id": "tool-grafana",
+    "name": "Grafana",
+    "description": "Open-source analytics and interactive visualization web application for monitoring and observability.",
+    "category": "Observability",
+    "current_versions": [
+      {
+        "cluster": "toolchain",
+        "version": "10.2.3",
+        "installed_at": "2024-11-01T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "10.2.3",
+      "release_date": "2024-11-15",
+      "changelog_url": "https://github.com/grafana/grafana/releases/tag/v10.2.3"
+    },
+    "owner_team": "Observability Team",
+    "repository_url": "https://github.com/grafana/grafana",
+    "chart_repo": "https://grafana.github.io/helm-charts",
+    "license": "AGPL-3.0",
+    "maintainer": "Grafana Labs"
+  },
+  {
+    "id": "tool-argocd",
+    "name": "ArgoCD",
+    "description": "Declarative GitOps continuous delivery tool for Kubernetes.",
+    "category": "GitOps",
+    "current_versions": [
+      {
+        "cluster": "toolchain",
+        "version": "2.9.3",
+        "installed_at": "2024-10-15T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "2.10.0",
+      "release_date": "2024-12-01",
+      "changelog_url": "https://github.com/argoproj/argo-cd/releases/tag/v2.10.0"
+    },
+    "owner_team": "Platform Team",
+    "repository_url": "https://github.com/argoproj/argo-cd",
+    "chart_repo": "https://argoproj.github.io/argo-helm",
+    "license": "Apache-2.0",
+    "maintainer": "Argo Project"
+  },
+  {
+    "id": "tool-jenkins",
+    "name": "Jenkins",
+    "description": "Open-source automation server for building, testing, and deploying software.",
+    "category": "CI/CD",
+    "current_versions": [
+      {
+        "cluster": "toolchain",
+        "version": "2.426.1",
+        "installed_at": "2024-09-20T10:00:00Z",
+        "status": "outdated",
+        "vulnerabilities": 1
+      }
+    ],
+    "latest_release": {
+      "version": "2.440.0",
+      "release_date": "2024-12-10",
+      "changelog_url": "https://www.jenkins.io/changelog/2.440/"
+    },
+    "owner_team": "Platform Team",
+    "repository_url": "https://github.com/jenkinsci/jenkins",
+    "chart_repo": "https://charts.jenkins.io",
+    "license": "MIT",
+    "maintainer": "Jenkins Community"
+  },
+  {
+    "id": "tool-github-runner",
+    "name": "GitHub Action Runner",
+    "description": "Self-hosted GitHub Actions runner for executing workflows on your own infrastructure.",
+    "category": "CI/CD",
+    "current_versions": [
+      {
+        "cluster": "toolchain",
+        "version": "2.311.0",
+        "installed_at": "2024-11-05T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "2.311.0",
+      "release_date": "2024-11-20",
+      "changelog_url": "https://github.com/actions/runner/releases/tag/v2.311.0"
+    },
+    "owner_team": "Platform Team",
+    "repository_url": "https://github.com/actions/runner",
+    "chart_repo": "https://actions-runner-controller.github.io/actions-runner-controller",
+    "license": "MIT",
+    "maintainer": "GitHub"
+  },
+  {
+    "id": "tool-prometheus-toolchain",
+    "name": "Prometheus",
+    "description": "Open-source systems monitoring and alerting toolkit.",
+    "category": "Observability",
+    "current_versions": [
+      {
+        "cluster": "toolchain",
+        "version": "2.48.0",
+        "installed_at": "2024-10-10T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "2.49.1",
+      "release_date": "2024-12-05",
+      "changelog_url": "https://github.com/prometheus/prometheus/releases/tag/v2.49.1"
+    },
+    "owner_team": "Observability Team",
+    "repository_url": "https://github.com/prometheus/prometheus",
+    "chart_repo": "https://prometheus-community.github.io/helm-charts",
+    "license": "Apache-2.0",
+    "maintainer": "Prometheus Authors"
+  },
+  {
+    "id": "tool-traefik",
+    "name": "Traefik",
+    "description": "Modern HTTP reverse proxy and load balancer for microservices.",
+    "category": "Networking",
+    "current_versions": [
+      {
+        "cluster": "toolchain",
+        "version": "2.10.7",
+        "installed_at": "2024-11-12T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "2.10.7",
+      "release_date": "2024-11-18",
+      "changelog_url": "https://github.com/traefik/traefik/releases/tag/v2.10.7"
+    },
+    "owner_team": "Platform Team",
+    "repository_url": "https://github.com/traefik/traefik",
+    "chart_repo": "https://traefik.github.io/charts",
+    "license": "MIT",
+    "maintainer": "Traefik Labs"
+  },
+  {
+    "id": "tool-fluentbit",
+    "name": "Fluent Bit",
+    "description": "Fast and lightweight log processor and forwarder for Linux, OSX and BSD.",
+    "category": "Logging",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "2.2.0",
+        "installed_at": "2024-10-05T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "2.2.1",
+        "installed_at": "2024-11-10T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "prod",
+        "version": "2.2.1",
+        "installed_at": "2024-11-12T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "2.2.1",
+      "release_date": "2024-11-08",
+      "changelog_url": "https://github.com/fluent/fluent-bit/releases/tag/v2.2.1"
+    },
+    "owner_team": "Observability Team",
+    "repository_url": "https://github.com/fluent/fluent-bit",
+    "chart_repo": "https://fluent.github.io/helm-charts",
+    "license": "Apache-2.0",
+    "maintainer": "Fluent Organization"
+  },
+  {
+    "id": "tool-prometheus",
+    "name": "Prometheus",
+    "description": "Open-source systems monitoring and alerting toolkit.",
+    "category": "Observability",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "2.49.1",
+        "installed_at": "2024-12-01T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "2.48.0",
+        "installed_at": "2024-10-15T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "prod",
+        "version": "2.47.2",
+        "installed_at": "2024-09-10T10:00:00Z",
+        "status": "outdated",
+        "vulnerabilities": 1
+      }
+    ],
+    "latest_release": {
+      "version": "2.49.1",
+      "release_date": "2024-12-05",
+      "changelog_url": "https://github.com/prometheus/prometheus/releases/tag/v2.49.1"
+    },
+    "owner_team": "Observability Team",
+    "repository_url": "https://github.com/prometheus/prometheus",
+    "chart_repo": "https://prometheus-community.github.io/helm-charts",
+    "license": "Apache-2.0",
+    "maintainer": "Prometheus Authors"
+  },
+  {
+    "id": "tool-falco",
+    "name": "Falco",
+    "description": "Cloud-native runtime security tool for detecting threats at runtime.",
+    "category": "Security",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "0.37.0",
+        "installed_at": "2024-11-20T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "0.36.2",
+        "installed_at": "2024-10-10T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "prod",
+        "version": "0.35.0",
+        "installed_at": "2024-08-15T10:00:00Z",
+        "status": "outdated",
+        "vulnerabilities": 2
+      }
+    ],
+    "latest_release": {
+      "version": "0.37.0",
+      "release_date": "2024-11-14",
+      "changelog_url": "https://github.com/falcosecurity/falco/releases/tag/0.37.0"
+    },
+    "owner_team": "Platform Security Team",
+    "repository_url": "https://github.com/falcosecurity/falco",
+    "chart_repo": "https://falcosecurity.github.io/charts",
+    "license": "Apache-2.0",
+    "maintainer": "Falco Security"
+  },
+  {
+    "id": "tool-external-dns",
+    "name": "External DNS",
+    "description": "Configure external DNS servers for Kubernetes Ingresses and Services.",
+    "category": "DNS",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "0.14.0",
+        "installed_at": "2024-10-20T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "0.14.0",
+        "installed_at": "2024-10-22T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "prod",
+        "version": "0.13.6",
+        "installed_at": "2024-09-05T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "0.14.0",
+      "release_date": "2024-10-15",
+      "changelog_url": "https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.14.0"
+    },
+    "owner_team": "Platform Team",
+    "repository_url": "https://github.com/kubernetes-sigs/external-dns",
+    "chart_repo": "https://kubernetes-sigs.github.io/external-dns/",
+    "license": "Apache-2.0",
+    "maintainer": "Kubernetes SIGs"
+  },
+  {
+    "id": "tool-external-secrets",
+    "name": "External Secrets",
+    "description": "Synchronize secrets from external APIs into Kubernetes.",
+    "category": "Secrets",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "0.9.11",
+        "installed_at": "2024-11-15T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "0.9.11",
+        "installed_at": "2024-11-16T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "prod",
+        "version": "0.9.9",
+        "installed_at": "2024-10-05T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "0.9.11",
+      "release_date": "2024-11-10",
+      "changelog_url": "https://github.com/external-secrets/external-secrets/releases/tag/v0.9.11"
+    },
+    "owner_team": "Platform Security Team",
+    "repository_url": "https://github.com/external-secrets/external-secrets",
+    "chart_repo": "https://charts.external-secrets.io",
+    "license": "Apache-2.0",
+    "maintainer": "External Secrets Operator"
+  },
+  {
+    "id": "tool-kyverno",
+    "name": "Kyverno",
+    "description": "Kubernetes-native policy management engine for security, automation, and governance.",
+    "category": "Policy",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "1.11.1",
+        "installed_at": "2024-11-05T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "1.11.0",
+        "installed_at": "2024-10-20T10:00:00Z",
+        "status": "outdated",
+        "vulnerabilities": 1
+      },
+      {
+        "cluster": "prod",
+        "version": "1.10.5",
+        "installed_at": "2024-09-10T10:00:00Z",
+        "status": "outdated",
+        "vulnerabilities": 2
+      }
+    ],
+    "latest_release": {
+      "version": "1.11.4",
+      "release_date": "2024-12-01",
+      "changelog_url": "https://github.com/kyverno/kyverno/releases/tag/v1.11.4"
+    },
+    "owner_team": "Platform Security Team",
+    "repository_url": "https://github.com/kyverno/kyverno",
+    "chart_repo": "https://kyverno.github.io/kyverno/",
+    "license": "Apache-2.0",
+    "maintainer": "Kyverno"
+  },
+  {
+    "id": "tool-cert-manager",
+    "name": "Cert Manager",
+    "description": "Automatically provision and manage TLS certificates in Kubernetes.",
+    "category": "Security",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "1.13.3",
+        "installed_at": "2024-11-18T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "1.13.3",
+        "installed_at": "2024-11-19T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "prod",
+        "version": "1.13.2",
+        "installed_at": "2024-10-25T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "1.13.3",
+      "release_date": "2024-11-12",
+      "changelog_url": "https://github.com/cert-manager/cert-manager/releases/tag/v1.13.3"
+    },
+    "owner_team": "Platform Security Team",
+    "repository_url": "https://github.com/cert-manager/cert-manager",
+    "chart_repo": "https://charts.jetstack.io",
+    "license": "Apache-2.0",
+    "maintainer": "Jetstack"
+  },
+  {
+    "id": "tool-ingress-nginx",
+    "name": "Ingress NGINX",
+    "description": "Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer.",
+    "category": "Networking",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "1.9.5",
+        "installed_at": "2024-11-10T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "1.9.4",
+        "installed_at": "2024-10-18T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "prod",
+        "version": "1.9.3",
+        "installed_at": "2024-09-25T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "1.9.5",
+      "release_date": "2024-11-05",
+      "changelog_url": "https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.9.5"
+    },
+    "owner_team": "Platform Team",
+    "repository_url": "https://github.com/kubernetes/ingress-nginx",
+    "chart_repo": "https://kubernetes.github.io/ingress-nginx",
+    "license": "Apache-2.0",
+    "maintainer": "Kubernetes"
+  },
+  {
+    "id": "tool-velero",
+    "name": "Velero",
+    "description": "Backup and migrate Kubernetes applications and their persistent volumes.",
+    "category": "Observability",
+    "current_versions": [
+      {
+        "cluster": "dev",
+        "version": "1.12.2",
+        "installed_at": "2024-11-01T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "int",
+        "version": "1.12.1",
+        "installed_at": "2024-10-12T10:00:00Z",
+        "status": "update_available",
+        "vulnerabilities": 0
+      },
+      {
+        "cluster": "prod",
+        "version": "1.12.2",
+        "installed_at": "2024-11-02T10:00:00Z",
+        "status": "up_to_date",
+        "vulnerabilities": 0
+      }
+    ],
+    "latest_release": {
+      "version": "1.12.2",
+      "release_date": "2024-10-28",
+      "changelog_url": "https://github.com/vmware-tanzu/velero/releases/tag/v1.12.2"
+    },
+    "owner_team": "Platform Team",
+    "repository_url": "https://github.com/vmware-tanzu/velero",
+    "chart_repo": "https://vmware-tanzu.github.io/helm-charts",
+    "license": "Apache-2.0",
+    "maintainer": "VMware Tanzu"
+  }
+]

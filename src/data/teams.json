@@ -1,0 +1,977 @@
+[
+  {
+    "id": "team-001",
+    "name": "Customer Web Team",
+    "description": "Develops and maintains customer-facing web applications and portals.",
+    "department": "Digital Experience",
+    "contact_email": "customerweb@company.com",
+    "teams_channel": "#customer-web",
+    "lead_name": "Sarah Chen",
+    "lead_email": "sarah.chen@company.com",
+    "member_count": 4,
+    "tags": [
+      "frontend"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Wiki",
+        "url": "https://wiki.company.com/teams/team-001"
+      },
+      {
+        "title": "Onboarding Guide",
+        "url": "https://docs.company.com/teams/team-001/onboarding"
+      }
+    ],
+    "members": [
+      {
+        "name": "Drew Anderson",
+        "role": "Site Reliability Engineer",
+        "email": "drew.anderson@company.com"
+      },
+      {
+        "name": "Alex Johnson",
+        "role": "DevOps Engineer",
+        "email": "alex.johnson@company.com"
+      },
+      {
+        "name": "Taylor Davis",
+        "role": "DevOps Engineer",
+        "email": "taylor.davis@company.com"
+      },
+      {
+        "name": "Logan Lewis",
+        "role": "Site Reliability Engineer",
+        "email": "logan.lewis@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-002",
+    "name": "Platform Security Team",
+    "description": "Ensures platform security, manages authentication, and implements security best practices.",
+    "department": "Platform",
+    "contact_email": "platform-security@company.com",
+    "teams_channel": "#platform-security",
+    "lead_name": "Michael Rodriguez",
+    "lead_email": "michael.rodriguez@company.com",
+    "member_count": 14,
+    "tags": [
+      "backend",
+      "infrastructure",
+      "security",
+      "compliance"
+    ],
+    "customLinks": [
+      {
+        "title": "Architecture Docs",
+        "url": "https://docs.company.com/teams/team-002/architecture"
+      },
+      {
+        "title": "Onboarding Guide",
+        "url": "https://docs.company.com/teams/team-002/onboarding"
+      }
+    ],
+    "members": [
+      {
+        "name": "Skyler Thompson",
+        "role": "Security Engineer",
+        "email": "skyler.thompson@company.com"
+      },
+      {
+        "name": "Taylor Davis",
+        "role": "Security Engineer",
+        "email": "taylor.davis@company.com"
+      },
+      {
+        "name": "Avery Martin",
+        "role": "Backend Engineer",
+        "email": "avery.martin@company.com"
+      },
+      {
+        "name": "Cameron Harris",
+        "role": "DevOps Engineer",
+        "email": "cameron.harris@company.com"
+      },
+      {
+        "name": "Jordan Brown",
+        "role": "QA Engineer",
+        "email": "jordan.brown@company.com"
+      },
+      {
+        "name": "Morgan Miller",
+        "role": "DevOps Engineer",
+        "email": "morgan.miller@company.com"
+      },
+      {
+        "name": "Drew Anderson",
+        "role": "Staff Engineer",
+        "email": "drew.anderson@company.com"
+      },
+      {
+        "name": "Emerson Lee",
+        "role": "Staff Engineer",
+        "email": "emerson.lee@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-003",
+    "name": "User Services Team",
+    "description": "Manages user services, authentication, and user data management.",
+    "department": "Platform",
+    "contact_email": "user-services@company.com",
+    "teams_channel": "#user-services",
+    "lead_name": "Emma Thompson",
+    "lead_email": "emma.thompson@company.com",
+    "member_count": 5,
+    "tags": [
+      "engineering"
+    ],
+    "customLinks": [
+      {
+        "title": "Architecture Docs",
+        "url": "https://docs.company.com/teams/team-003/architecture"
+      },
+      {
+        "title": "Onboarding Guide",
+        "url": "https://docs.company.com/teams/team-003/onboarding"
+      },
+      {
+        "title": "Sprint Board",
+        "url": "https://jira.company.com/teams/team-003"
+      },
+      {
+        "title": "Team Roadmap",
+        "url": "https://roadmap.company.com/teams/team-003"
+      }
+    ],
+    "members": [
+      {
+        "name": "Alex Johnson",
+        "role": "Backend Engineer",
+        "email": "alex.johnson@company.com"
+      },
+      {
+        "name": "Parker Robinson",
+        "role": "QA Engineer",
+        "email": "parker.robinson@company.com"
+      },
+      {
+        "name": "Reese Hall",
+        "role": "QA Engineer",
+        "email": "reese.hall@company.com"
+      },
+      {
+        "name": "Morgan Miller",
+        "role": "Frontend Engineer",
+        "email": "morgan.miller@company.com"
+      },
+      {
+        "name": "Casey Wilson",
+        "role": "Senior Engineer",
+        "email": "casey.wilson@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-004",
+    "name": "Communication Team",
+    "description": "Handles notification services, messaging systems, and communication infrastructure.",
+    "department": "Platform",
+    "contact_email": "communications@company.com",
+    "teams_channel": "#communications",
+    "lead_name": "David Kim",
+    "lead_email": "david.kim@company.com",
+    "member_count": 9,
+    "tags": [
+      "engineering"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Roadmap",
+        "url": "https://roadmap.company.com/teams/team-004"
+      },
+      {
+        "title": "Team Wiki",
+        "url": "https://wiki.company.com/teams/team-004"
+      },
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-004"
+      },
+      {
+        "title": "Architecture Docs",
+        "url": "https://docs.company.com/teams/team-004/architecture"
+      }
+    ],
+    "members": [
+      {
+        "name": "Ryan Jackson",
+        "role": "Full Stack Engineer",
+        "email": "ryan.jackson@company.com"
+      },
+      {
+        "name": "Emerson Lee",
+        "role": "Frontend Engineer",
+        "email": "emerson.lee@company.com"
+      },
+      {
+        "name": "Finley Walker",
+        "role": "Full Stack Engineer",
+        "email": "finley.walker@company.com"
+      },
+      {
+        "name": "Hayden Clark",
+        "role": "DevOps Engineer",
+        "email": "hayden.clark@company.com"
+      },
+      {
+        "name": "Robin Taylor",
+        "role": "Staff Engineer",
+        "email": "robin.taylor@company.com"
+      },
+      {
+        "name": "Peyton Rodriguez",
+        "role": "Frontend Engineer",
+        "email": "peyton.rodriguez@company.com"
+      },
+      {
+        "name": "Dylan Martinez",
+        "role": "Product Manager",
+        "email": "dylan.martinez@company.com"
+      },
+      {
+        "name": "Parker Robinson",
+        "role": "Frontend Engineer",
+        "email": "parker.robinson@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-005",
+    "name": "Payments Team",
+    "description": "Processes payments, manages billing integration, and handles financial transactions.",
+    "department": "Finance",
+    "contact_email": "payments@company.com",
+    "teams_channel": "#payments",
+    "lead_name": "Jessica Martinez",
+    "lead_email": "jessica.martinez@company.com",
+    "member_count": 8,
+    "tags": [
+      "fintech"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Roadmap",
+        "url": "https://roadmap.company.com/teams/team-005"
+      },
+      {
+        "title": "Onboarding Guide",
+        "url": "https://docs.company.com/teams/team-005/onboarding"
+      }
+    ],
+    "members": [
+      {
+        "name": "Riley White",
+        "role": "Security Engineer",
+        "email": "riley.white@company.com"
+      },
+      {
+        "name": "Morgan Miller",
+        "role": "Data Engineer",
+        "email": "morgan.miller@company.com"
+      },
+      {
+        "name": "Ryan Jackson",
+        "role": "Site Reliability Engineer",
+        "email": "ryan.jackson@company.com"
+      },
+      {
+        "name": "Casey Wilson",
+        "role": "Backend Engineer",
+        "email": "casey.wilson@company.com"
+      },
+      {
+        "name": "Emerson Lee",
+        "role": "Senior Engineer",
+        "email": "emerson.lee@company.com"
+      },
+      {
+        "name": "Logan Lewis",
+        "role": "Backend Engineer",
+        "email": "logan.lewis@company.com"
+      },
+      {
+        "name": "Parker Robinson",
+        "role": "Frontend Engineer",
+        "email": "parker.robinson@company.com"
+      },
+      {
+        "name": "Avery Martin",
+        "role": "Staff Engineer",
+        "email": "avery.martin@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-006",
+    "name": "Admin Tools Team",
+    "description": "Builds internal admin tools and dashboards for operations and support teams.",
+    "department": "Operations",
+    "contact_email": "admin-tools@company.com",
+    "teams_channel": "#admin-tools",
+    "lead_name": "Robert Taylor",
+    "lead_email": "robert.taylor@company.com",
+    "member_count": 12,
+    "tags": [
+      "engineering"
+    ],
+    "customLinks": [
+      {
+        "title": "Architecture Docs",
+        "url": "https://docs.company.com/teams/team-006/architecture"
+      },
+      {
+        "title": "Onboarding Guide",
+        "url": "https://docs.company.com/teams/team-006/onboarding"
+      },
+      {
+        "title": "Sprint Board",
+        "url": "https://jira.company.com/teams/team-006"
+      }
+    ],
+    "members": [
+      {
+        "name": "Jamie Moore",
+        "role": "Frontend Engineer",
+        "email": "jamie.moore@company.com"
+      },
+      {
+        "name": "Skyler Thompson",
+        "role": "Engineering Manager",
+        "email": "skyler.thompson@company.com"
+      },
+      {
+        "name": "Quinn Thomas",
+        "role": "Engineering Manager",
+        "email": "quinn.thomas@company.com"
+      },
+      {
+        "name": "Parker Robinson",
+        "role": "QA Engineer",
+        "email": "parker.robinson@company.com"
+      },
+      {
+        "name": "Casey Wilson",
+        "role": "Site Reliability Engineer",
+        "email": "casey.wilson@company.com"
+      },
+      {
+        "name": "Jordan Brown",
+        "role": "Product Manager",
+        "email": "jordan.brown@company.com"
+      },
+      {
+        "name": "Ryan Jackson",
+        "role": "Engineering Manager",
+        "email": "ryan.jackson@company.com"
+      },
+      {
+        "name": "Taylor Davis",
+        "role": "Backend Engineer",
+        "email": "taylor.davis@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-007",
+    "name": "Analytics Team",
+    "description": "Develops analytics platforms, reporting tools, and data visualization systems.",
+    "department": "Data & Analytics",
+    "contact_email": "analytics@company.com",
+    "teams_channel": "#analytics",
+    "lead_name": "Amanda Wilson",
+    "lead_email": "amanda.wilson@company.com",
+    "member_count": 6,
+    "tags": [
+      "data",
+      "analytics"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Roadmap",
+        "url": "https://roadmap.company.com/teams/team-007"
+      },
+      {
+        "title": "Team Wiki",
+        "url": "https://wiki.company.com/teams/team-007"
+      }
+    ],
+    "members": [
+      {
+        "name": "Blake Garcia",
+        "role": "Site Reliability Engineer",
+        "email": "blake.garcia@company.com"
+      },
+      {
+        "name": "Logan Lewis",
+        "role": "Full Stack Engineer",
+        "email": "logan.lewis@company.com"
+      },
+      {
+        "name": "Riley White",
+        "role": "DevOps Engineer",
+        "email": "riley.white@company.com"
+      },
+      {
+        "name": "Robin Taylor",
+        "role": "Frontend Engineer",
+        "email": "robin.taylor@company.com"
+      },
+      {
+        "name": "Alex Johnson",
+        "role": "Product Manager",
+        "email": "alex.johnson@company.com"
+      },
+      {
+        "name": "Jordan Brown",
+        "role": "Backend Engineer",
+        "email": "jordan.brown@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-008",
+    "name": "iOS Team",
+    "description": "Develops and maintains iOS mobile applications.",
+    "department": "Mobile",
+    "contact_email": "ios@company.com",
+    "teams_channel": "#ios-team",
+    "lead_name": "James Anderson",
+    "lead_email": "james.anderson@company.com",
+    "member_count": 10,
+    "tags": [
+      "frontend"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Roadmap",
+        "url": "https://roadmap.company.com/teams/team-008"
+      },
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-008"
+      }
+    ],
+    "members": [
+      {
+        "name": "Peyton Rodriguez",
+        "role": "Frontend Engineer",
+        "email": "peyton.rodriguez@company.com"
+      },
+      {
+        "name": "Taylor Davis",
+        "role": "Security Engineer",
+        "email": "taylor.davis@company.com"
+      },
+      {
+        "name": "Jamie Moore",
+        "role": "Staff Engineer",
+        "email": "jamie.moore@company.com"
+      },
+      {
+        "name": "Alex Johnson",
+        "role": "Data Engineer",
+        "email": "alex.johnson@company.com"
+      },
+      {
+        "name": "Casey Wilson",
+        "role": "Senior Engineer",
+        "email": "casey.wilson@company.com"
+      },
+      {
+        "name": "Skyler Thompson",
+        "role": "Staff Engineer",
+        "email": "skyler.thompson@company.com"
+      },
+      {
+        "name": "Reese Hall",
+        "role": "Site Reliability Engineer",
+        "email": "reese.hall@company.com"
+      },
+      {
+        "name": "Robin Taylor",
+        "role": "Frontend Engineer",
+        "email": "robin.taylor@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-009",
+    "name": "Android Team",
+    "description": "Develops and maintains Android mobile applications.",
+    "department": "Mobile",
+    "contact_email": "android@company.com",
+    "teams_channel": "#android-team",
+    "lead_name": "Maria Garcia",
+    "lead_email": "maria.garcia@company.com",
+    "member_count": 6,
+    "tags": [
+      "frontend"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Wiki",
+        "url": "https://wiki.company.com/teams/team-009"
+      },
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-009"
+      }
+    ],
+    "members": [
+      {
+        "name": "Ryan Jackson",
+        "role": "Data Engineer",
+        "email": "ryan.jackson@company.com"
+      },
+      {
+        "name": "Skyler Thompson",
+        "role": "Frontend Engineer",
+        "email": "skyler.thompson@company.com"
+      },
+      {
+        "name": "Taylor Davis",
+        "role": "Backend Engineer",
+        "email": "taylor.davis@company.com"
+      },
+      {
+        "name": "Jordan Brown",
+        "role": "Product Manager",
+        "email": "jordan.brown@company.com"
+      },
+      {
+        "name": "Jamie Moore",
+        "role": "Site Reliability Engineer",
+        "email": "jamie.moore@company.com"
+      },
+      {
+        "name": "Reese Hall",
+        "role": "Engineering Manager",
+        "email": "reese.hall@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-010",
+    "name": "Platform Team",
+    "description": "Maintains platform infrastructure, API gateways, and core services.",
+    "department": "Platform",
+    "contact_email": "platform@company.com",
+    "teams_channel": "#platform",
+    "lead_name": "Christopher Lee",
+    "lead_email": "christopher.lee@company.com",
+    "member_count": 14,
+    "tags": [
+      "backend",
+      "infrastructure"
+    ],
+    "customLinks": [
+      {
+        "title": "Sprint Board",
+        "url": "https://jira.company.com/teams/team-010"
+      },
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-010"
+      }
+    ],
+    "members": [
+      {
+        "name": "Jamie Moore",
+        "role": "QA Engineer",
+        "email": "jamie.moore@company.com"
+      },
+      {
+        "name": "Skyler Thompson",
+        "role": "Security Engineer",
+        "email": "skyler.thompson@company.com"
+      },
+      {
+        "name": "Peyton Rodriguez",
+        "role": "QA Engineer",
+        "email": "peyton.rodriguez@company.com"
+      },
+      {
+        "name": "Robin Taylor",
+        "role": "Data Engineer",
+        "email": "robin.taylor@company.com"
+      },
+      {
+        "name": "Jordan Brown",
+        "role": "Site Reliability Engineer",
+        "email": "jordan.brown@company.com"
+      },
+      {
+        "name": "Sam Williams",
+        "role": "Security Engineer",
+        "email": "sam.williams@company.com"
+      },
+      {
+        "name": "Logan Lewis",
+        "role": "QA Engineer",
+        "email": "logan.lewis@company.com"
+      },
+      {
+        "name": "Finley Walker",
+        "role": "Staff Engineer",
+        "email": "finley.walker@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-011",
+    "name": "Content Team",
+    "description": "Manages content delivery, CMS, and media services.",
+    "department": "Marketing",
+    "contact_email": "content@company.com",
+    "teams_channel": "#content",
+    "lead_name": "Jennifer Brown",
+    "lead_email": "jennifer.brown@company.com",
+    "member_count": 7,
+    "tags": [
+      "engineering"
+    ],
+    "customLinks": [
+      {
+        "title": "Onboarding Guide",
+        "url": "https://docs.company.com/teams/team-011/onboarding"
+      },
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-011"
+      },
+      {
+        "title": "Architecture Docs",
+        "url": "https://docs.company.com/teams/team-011/architecture"
+      }
+    ],
+    "members": [
+      {
+        "name": "Alex Johnson",
+        "role": "Data Engineer",
+        "email": "alex.johnson@company.com"
+      },
+      {
+        "name": "Jordan Brown",
+        "role": "Engineering Manager",
+        "email": "jordan.brown@company.com"
+      },
+      {
+        "name": "Taylor Davis",
+        "role": "Security Engineer",
+        "email": "taylor.davis@company.com"
+      },
+      {
+        "name": "Blake Garcia",
+        "role": "Data Engineer",
+        "email": "blake.garcia@company.com"
+      },
+      {
+        "name": "Riley White",
+        "role": "Full Stack Engineer",
+        "email": "riley.white@company.com"
+      },
+      {
+        "name": "Peyton Rodriguez",
+        "role": "Engineering Manager",
+        "email": "peyton.rodriguez@company.com"
+      },
+      {
+        "name": "Parker Robinson",
+        "role": "Engineering Manager",
+        "email": "parker.robinson@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-012",
+    "name": "Security Engineering Team",
+    "description": "Implements security monitoring, incident response, and security tooling.",
+    "department": "Security",
+    "contact_email": "security-eng@company.com",
+    "teams_channel": "#security-eng",
+    "lead_name": "Daniel White",
+    "lead_email": "daniel.white@company.com",
+    "member_count": 11,
+    "tags": [
+      "security",
+      "compliance"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Wiki",
+        "url": "https://wiki.company.com/teams/team-012"
+      },
+      {
+        "title": "Team Roadmap",
+        "url": "https://roadmap.company.com/teams/team-012"
+      },
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-012"
+      }
+    ],
+    "members": [
+      {
+        "name": "Casey Wilson",
+        "role": "Senior Engineer",
+        "email": "casey.wilson@company.com"
+      },
+      {
+        "name": "Robin Taylor",
+        "role": "Site Reliability Engineer",
+        "email": "robin.taylor@company.com"
+      },
+      {
+        "name": "Sam Williams",
+        "role": "Data Engineer",
+        "email": "sam.williams@company.com"
+      },
+      {
+        "name": "Quinn Thomas",
+        "role": "Data Engineer",
+        "email": "quinn.thomas@company.com"
+      },
+      {
+        "name": "Jamie Moore",
+        "role": "Full Stack Engineer",
+        "email": "jamie.moore@company.com"
+      },
+      {
+        "name": "Emerson Lee",
+        "role": "Senior Engineer",
+        "email": "emerson.lee@company.com"
+      },
+      {
+        "name": "Morgan Miller",
+        "role": "Full Stack Engineer",
+        "email": "morgan.miller@company.com"
+      },
+      {
+        "name": "Taylor Davis",
+        "role": "Senior Engineer",
+        "email": "taylor.davis@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-013",
+    "name": "Infrastructure Team",
+    "description": "Manages infrastructure, deployment pipelines, and DevOps practices.",
+    "department": "Platform",
+    "contact_email": "infrastructure@company.com",
+    "teams_channel": "#infrastructure",
+    "lead_name": "Lisa Johnson",
+    "lead_email": "lisa.johnson@company.com",
+    "member_count": 4,
+    "tags": [
+      "backend",
+      "infrastructure"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-013"
+      },
+      {
+        "title": "Team Wiki",
+        "url": "https://wiki.company.com/teams/team-013"
+      }
+    ],
+    "members": [
+      {
+        "name": "Blake Garcia",
+        "role": "Engineering Manager",
+        "email": "blake.garcia@company.com"
+      },
+      {
+        "name": "Morgan Miller",
+        "role": "DevOps Engineer",
+        "email": "morgan.miller@company.com"
+      },
+      {
+        "name": "Casey Wilson",
+        "role": "Staff Engineer",
+        "email": "casey.wilson@company.com"
+      },
+      {
+        "name": "Dylan Martinez",
+        "role": "Data Engineer",
+        "email": "dylan.martinez@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-014",
+    "name": "Billing Team",
+    "description": "Handles billing operations, invoicing, and payment processing.",
+    "department": "Finance",
+    "contact_email": "billing@company.com",
+    "teams_channel": "#billing",
+    "lead_name": "Matthew Davis",
+    "lead_email": "matthew.davis@company.com",
+    "member_count": 7,
+    "tags": [
+      "fintech"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Roadmap",
+        "url": "https://roadmap.company.com/teams/team-014"
+      },
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-014"
+      },
+      {
+        "title": "Onboarding Guide",
+        "url": "https://docs.company.com/teams/team-014/onboarding"
+      },
+      {
+        "title": "Sprint Board",
+        "url": "https://jira.company.com/teams/team-014"
+      }
+    ],
+    "members": [
+      {
+        "name": "Casey Wilson",
+        "role": "Security Engineer",
+        "email": "casey.wilson@company.com"
+      },
+      {
+        "name": "Logan Lewis",
+        "role": "Full Stack Engineer",
+        "email": "logan.lewis@company.com"
+      },
+      {
+        "name": "Parker Robinson",
+        "role": "Staff Engineer",
+        "email": "parker.robinson@company.com"
+      },
+      {
+        "name": "Sam Williams",
+        "role": "Staff Engineer",
+        "email": "sam.williams@company.com"
+      },
+      {
+        "name": "Riley White",
+        "role": "Backend Engineer",
+        "email": "riley.white@company.com"
+      },
+      {
+        "name": "Hayden Clark",
+        "role": "QA Engineer",
+        "email": "hayden.clark@company.com"
+      },
+      {
+        "name": "Taylor Davis",
+        "role": "DevOps Engineer",
+        "email": "taylor.davis@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-015",
+    "name": "Data Engineering Team",
+    "description": "Builds data pipelines, warehouses, and ETL processes.",
+    "department": "Data & Analytics",
+    "contact_email": "data-eng@company.com",
+    "teams_channel": "#data-eng",
+    "lead_name": "Rachel Green",
+    "lead_email": "rachel.green@company.com",
+    "member_count": 3,
+    "tags": [
+      "data",
+      "analytics"
+    ],
+    "customLinks": [
+      {
+        "title": "Team Dashboard",
+        "url": "https://dashboard.company.com/teams/team-015"
+      },
+      {
+        "title": "Architecture Docs",
+        "url": "https://docs.company.com/teams/team-015/architecture"
+      },
+      {
+        "title": "Onboarding Guide",
+        "url": "https://docs.company.com/teams/team-015/onboarding"
+      }
+    ],
+    "members": [
+      {
+        "name": "Jordan Brown",
+        "role": "Security Engineer",
+        "email": "jordan.brown@company.com"
+      },
+      {
+        "name": "Reese Hall",
+        "role": "DevOps Engineer",
+        "email": "reese.hall@company.com"
+      },
+      {
+        "name": "Sam Williams",
+        "role": "QA Engineer",
+        "email": "sam.williams@company.com"
+      }
+    ]
+  },
+  {
+    "id": "team-016",
+    "name": "ML Engineering Team",
+    "description": "Develops machine learning models, recommendation systems, and AI features.",
+    "department": "Data & Analytics",
+    "contact_email": "ml-eng@company.com",
+    "teams_channel": "#ml-eng",
+    "lead_name": "Kevin Martinez",
+    "lead_email": "kevin.martinez@company.com",
+    "member_count": 4,
+    "tags": [
+      "data",
+      "analytics"
+    ],
+    "customLinks": [
+      {
+        "title": "Sprint Board",
+        "url": "https://jira.company.com/teams/team-016"
+      },
+      {
+        "title": "Team Roadmap",
+        "url": "https://roadmap.company.com/teams/team-016"
+      }
+    ],
+    "members": [
+      {
+        "name": "Riley White",
+        "role": "Staff Engineer",
+        "email": "riley.white@company.com"
+      },
+      {
+        "name": "Morgan Miller",
+        "role": "Data Engineer",
+        "email": "morgan.miller@company.com"
+      },
+      {
+        "name": "Cameron Harris",
+        "role": "Backend Engineer",
+        "email": "cameron.harris@company.com"
+      },
+      {
+        "name": "Finley Walker",
+        "role": "Product Manager",
+        "email": "finley.walker@company.com"
+      }
+    ]
+  }
+]
