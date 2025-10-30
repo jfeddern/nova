@@ -51,7 +51,6 @@ export default function KnownIssuesTab({
   const [selectedSeverities, setSelectedSeverities] = useState<IssueSeverity[]>([])
   const [selectedCategories, setSelectedCategories] = useState<IssueCategory[]>([])
   const [selectedIssue, setSelectedIssue] = useState<KnownIssue | null>(null)
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [editingIssue, setEditingIssue] = useState<KnownIssue | null>(null)
   const [showFilters, setShowFilters] = useState(false)
@@ -66,11 +65,9 @@ export default function KnownIssuesTab({
 
   const handleIssueClick = (issue: KnownIssue) => {
     setSelectedIssue(issue)
-    setIsDrawerOpen(true)
   }
 
   const handleCloseDrawer = () => {
-    setIsDrawerOpen(false)
     setSelectedIssue(null)
   }
 
@@ -82,10 +79,10 @@ export default function KnownIssuesTab({
   const handleEditIssue = (issue: KnownIssue) => {
     setEditingIssue(issue)
     setIsDialogOpen(true)
-    setIsDrawerOpen(false)
+    setSelectedIssue(null)
   }
 
-  const handleSaveIssue = (issue: KnownIssue) => {
+  const handleSaveIssue = () => {
     setIssues(knownIssueService.getIssuesByApplicationId(applicationId))
     setIsDialogOpen(false)
     setEditingIssue(null)
@@ -94,7 +91,6 @@ export default function KnownIssuesTab({
   const handleDeleteIssue = (issueId: string) => {
     knownIssueService.deleteIssue(issueId)
     setIssues(knownIssueService.getIssuesByApplicationId(applicationId))
-    setIsDrawerOpen(false)
     setSelectedIssue(null)
   }
 

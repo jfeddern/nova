@@ -13,7 +13,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Search, AlertTriangle, CheckCircle2, AlertCircle, Package } from 'lucide-react'
-import type { PlatformTool, ToolStatus, ToolCategory } from '@/types/platformTool'
+import type { PlatformTool, ToolStatus } from '@/types/platformTool'
 
 const STATUS_CONFIG = {
   up_to_date: {

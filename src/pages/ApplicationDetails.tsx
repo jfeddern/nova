@@ -22,7 +22,6 @@ import {
   ArrowUp,
   Database,
   FileText,
-  GitBranch,
   Shield,
   BookOpen,
 } from 'lucide-react'

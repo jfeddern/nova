@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import {
   Shield,
   AlertTriangle,
-  TrendingUp,
   CheckCircle2,
   Clock,
   Package,
@@ -18,8 +17,6 @@ import {
   Bar,
   PieChart,
   Pie,
-  LineChart,
-  Line,
   Cell,
   XAxis,
   YAxis,
@@ -45,7 +42,7 @@ import {
   getAllApplicationVulnerabilities,
 } from '@/services/vulnerabilityService'
 import { getApplications } from '@/services/applicationService'
-import type { Vulnerability, VulnerabilitySeverity, VulnerabilityStatus } from '@/types/vulnerability'
+import type { VulnerabilitySeverity, VulnerabilityStatus } from '@/types/vulnerability'
 
 const SEVERITY_COLORS = {
   critical: '#dc2626',

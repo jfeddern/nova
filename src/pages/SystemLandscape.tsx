@@ -9,12 +9,11 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   MarkerType,
-  Position,
   MiniMap,
   Panel,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
-import { Search, Filter, Layers, AlertTriangle, Shield, X } from 'lucide-react'
+import { Search, Filter, Layers, Shield, X } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -60,7 +59,6 @@ export function SystemLandscape() {
   const [selectedDomain, setSelectedDomain] = useState<string>('all')
   const [selectedHealth, setSelectedHealth] = useState<string>('all')
   const [selectedCriticality, setSelectedCriticality] = useState<string>('all')
-  const [highlightedNode, setHighlightedNode] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<'domains' | 'applications'>('domains')
   const [filtersPanelOpen, setFiltersPanelOpen] = useState(true)
 
@@ -333,19 +331,8 @@ export function SystemLandscape() {
       if (query && viewMode === 'domains') {
         setViewMode('applications')
       }
-
-      if (query) {
-        const matchedApp = applications.find((app) =>
-          app.name.toLowerCase().includes(query.toLowerCase())
-        )
-        if (matchedApp) {
-          setHighlightedNode(matchedApp.id)
-        }
-      } else {
-        setHighlightedNode(null)
-      }
     },
-    [applications, viewMode]
+    [viewMode]
   )
 
   const handleResetView = useCallback(() => {
@@ -354,7 +341,6 @@ export function SystemLandscape() {
     setSelectedDomain('all')
     setSelectedHealth('all')
     setSelectedCriticality('all')
-    setHighlightedNode(null)
   }, [])
 
   return (

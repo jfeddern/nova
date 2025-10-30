@@ -135,9 +135,6 @@ export function DependencyGraph({ applicationId }: DependencyGraphProps) {
     })
 
     const minLevel = Math.min(...Array.from(levelMap.values()))
-    const maxLevel = Math.max(...Array.from(levelMap.values()))
-    const datastoreLevel = maxLevel + 1
-
     levelMap.forEach((level, appId) => {
       const app = applications.find((a: Application) => a.id === appId)
       if (!app) return

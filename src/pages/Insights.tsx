@@ -2,7 +2,6 @@ import { useState, useMemo, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { getApplications } from '@/services/applicationService'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
   Select,
@@ -31,11 +30,7 @@ import {
   Users,
   AlertCircle,
   TrendingUp,
-  TrendingDown,
-  Database,
   GitBranch,
-  Shield,
-  Clock,
 } from 'lucide-react'
 import type { Application, HealthStatus } from '@/types/application'
 
@@ -91,7 +86,7 @@ export function Insights() {
     const totalDeps = filteredApplications.reduce((sum, app) => sum + app.dependencies.length, 0)
     const teams = new Set(filteredApplications.map((app) => app.owner.team))
     const totalVulns = filteredApplications.reduce(
-      (sum, app) => sum + (Math.floor(Math.random() * 10)),
+      (sum) => sum + (Math.floor(Math.random() * 10)),
       0
     )
     const healthyApps = filteredApplications.filter((app) => app.health === 'healthy').length
