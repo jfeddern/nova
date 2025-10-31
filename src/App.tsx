@@ -21,7 +21,7 @@ function App() {
   return (
     <ThemeProvider>
       <QueryClientProvider client={queryClient}>
-        <Router future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
+        <Router basename="/nova/" future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Dashboard />} />
