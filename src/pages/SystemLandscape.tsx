@@ -103,7 +103,7 @@ export function SystemLandscape() {
 
       if (app.health === 'critical' || domain.health === 'critical') {
         domain.health = 'critical'
-      } else if (app.health === 'degraded' && domain.health !== 'critical') {
+      } else if (app.health === 'degraded') {
         domain.health = 'degraded'
       }
     })
@@ -314,7 +314,7 @@ export function SystemLandscape() {
   }, [domainNodes, domainEdges, setNodes, setEdges])
 
   const onNodeClick = useCallback(
-    (event: React.MouseEvent, node: Node) => {
+    (_event: React.MouseEvent, node: Node) => {
       if (viewMode === 'domains') {
         setSelectedDomain(domains.find((d) => d.id === node.id)?.name || 'all')
         setViewMode('applications')
