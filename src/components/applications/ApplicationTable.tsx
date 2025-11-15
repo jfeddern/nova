@@ -9,7 +9,6 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { Badge } from '@/components/ui/badge'
-import { ExternalLink } from 'lucide-react'
 
 interface ApplicationTableProps {
   applications: Application[]
