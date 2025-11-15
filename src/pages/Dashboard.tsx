@@ -15,7 +15,6 @@ export function Dashboard() {
   const [viewMode, setViewMode] = useState<'grid' | 'table'>('table')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedDepartments, setSelectedDepartments] = useState<string[]>([])
-  const [selectedCriticality, setSelectedCriticality] = useState<string[]>([])
   const [selectedTags, setSelectedTags] = useState<string[]>([])
 
   const { data: applications = [], isLoading } = useQuery({
@@ -34,13 +33,11 @@ export function Dashboard() {
     const matchesDepartment =
       selectedDepartments.length === 0 || selectedDepartments.includes(app.department)
 
-    const matchesCriticality =
-      selectedCriticality.length === 0 || selectedCriticality.includes(app.criticality)
 
     const matchesTags =
       selectedTags.length === 0 || selectedTags.some((tag) => app.tags.includes(tag))
 
-    return matchesSearch && matchesDepartment && matchesCriticality && matchesTags
+    return matchesSearch && matchesDepartment && matchesTags
   })
 
   if (isLoading) {
@@ -95,10 +92,8 @@ export function Dashboard() {
           <FilterPanel
             applications={applications}
             selectedDepartments={selectedDepartments}
-            selectedCriticality={selectedCriticality}
             selectedTags={selectedTags}
             onDepartmentsChange={setSelectedDepartments}
-            onCriticalityChange={setSelectedCriticality}
             onTagsChange={setSelectedTags}
           />
         </div>

@@ -49,7 +49,6 @@ export function ApplicationForm() {
     contactEmail: existingApp?.owner.contact_email || '',
     teamsChannel: existingApp?.owner.teams_channel || '',
     environment: existingApp?.environment || 'production',
-    criticality: existingApp?.criticality || 'P2',
     repository: existingApp?.links.repository || '',
     documentation: existingApp?.links.documentation || '',
     monitoring: existingApp?.links.monitoring || '',
@@ -222,21 +221,6 @@ export function ApplicationForm() {
                   <option value="production">Production</option>
                   <option value="staging">Staging</option>
                   <option value="development">Development</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">Criticality *</label>
-                <select
-                  required
-                  className="flex h-11 w-full rounded-xl border-2 border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring hover:border-primary/50"
-                  value={formData.criticality}
-                  onChange={(e) =>
-                    setFormData({ ...formData, criticality: e.target.value as 'P1' | 'P2' | 'P3' })
-                  }
-                >
-                  <option value="P1">P1 - Critical</option>
-                  <option value="P2">P2 - Important</option>
-                  <option value="P3">P3 - Standard</option>
                 </select>
               </div>
             </div>
@@ -547,21 +531,6 @@ export function ApplicationForm() {
                         onChange={() => toggleDependency(app.id)}
                         className="rounded"
                       />
-                      <div className="flex-1">
-                        <div className="font-semibold">{app.name}</div>
-                        <div className="text-sm text-muted-foreground">{app.department}</div>
-                      </div>
-                      <Badge
-                        variant={
-                          app.criticality === 'P1'
-                            ? 'destructive'
-                            : app.criticality === 'P2'
-                              ? 'warning'
-                              : 'secondary'
-                        }
-                      >
-                        {app.criticality}
-                      </Badge>
                     </label>
                   )
                 })}

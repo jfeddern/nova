@@ -66,11 +66,6 @@ export function ApplicationDetails() {
     )
   }
 
-  const criticalityColors = {
-    P1: 'destructive',
-    P2: 'warning',
-    P3: 'secondary',
-  } as const
 
   const downstreamApplications = allApplications.filter((app) =>
     application.dependencies.includes(app.id)
@@ -112,10 +107,7 @@ export function ApplicationDetails() {
       <div className="space-y-2">
         <div className="flex items-center gap-3">
           <h1 className="text-3xl font-bold">{application.name}</h1>
-          <Badge variant={criticalityColors[application.criticality]}>
-            {application.criticality}
-          </Badge>
-          <Badge variant="outline">{application.environment}</Badge>
+
         </div>
         <p className="text-base text-muted-foreground italic">{application.brief}</p>
         <p className="text-sm text-muted-foreground mt-2">{application.description}</p>
@@ -289,12 +281,6 @@ export function ApplicationDetails() {
                                 {app.department}
                               </span>
                             </div>
-                            <Badge
-                              variant={criticalityColors[app.criticality]}
-                              className="text-xs"
-                            >
-                              {app.criticality}
-                            </Badge>
                           </div>
                         </Link>
                       ))
@@ -325,12 +311,6 @@ export function ApplicationDetails() {
                                 {app.department}
                               </span>
                             </div>
-                            <Badge
-                              variant={criticalityColors[app.criticality]}
-                              className="text-xs"
-                            >
-                              {app.criticality}
-                            </Badge>
                           </div>
                         </Link>
                       ))

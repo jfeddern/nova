@@ -24,8 +24,6 @@ export function ApplicationTable({ applications }: ApplicationTableProps) {
             <TableHead>Name</TableHead>
             <TableHead>Department</TableHead>
             <TableHead>Team</TableHead>
-            <TableHead>Criticality</TableHead>
-            <TableHead>Environment</TableHead>
             <TableHead>Tags</TableHead>
             <TableHead className="text-right">Actions</TableHead>
           </TableRow>
@@ -40,19 +38,7 @@ export function ApplicationTable({ applications }: ApplicationTableProps) {
               </TableCell>
               <TableCell>{app.department}</TableCell>
               <TableCell>{app.owner.team}</TableCell>
-              <TableCell>
-                <Badge
-                  variant={
-                    app.criticality === 'P1'
-                      ? 'destructive'
-                      : app.criticality === 'P2'
-                        ? 'warning'
-                        : 'secondary'
-                  }
-                >
-                  {app.criticality}
-                </Badge>
-              </TableCell>
+
               <TableCell>
                 <Badge variant="outline">{app.environment}</Badge>
               </TableCell>

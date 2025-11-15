@@ -84,11 +84,6 @@ export function TeamDetails() {
 
   const teamApplications = allApplications.filter((app) => app.owner.team === team.name)
 
-  const criticalityColors = {
-    P1: 'destructive',
-    P2: 'warning',
-    P3: 'secondary',
-  } as const
 
   return (
     <div className="space-y-6">
@@ -363,9 +358,6 @@ export function TeamDetails() {
                     <div className="flex items-center gap-2">
                       <Badge variant="outline" className="text-xs">
                         {app.environment}
-                      </Badge>
-                      <Badge variant={criticalityColors[app.criticality]} className="text-xs">
-                        {app.criticality}
                       </Badge>
                     </div>
                   </div>

@@ -73,7 +73,7 @@ export function About() {
           <CardContent>
             <p className="text-sm">
               Powerful search and filtering capabilities allow you to find applications by name,
-              team, department, tags, criticality, and more.
+              team, department, tags, and more.
             </p>
           </CardContent>
         </Card>

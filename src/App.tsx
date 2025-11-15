@@ -5,8 +5,6 @@ import { Layout } from '@/components/layout/Layout'
 import { Dashboard } from '@/pages/Dashboard'
 import { ApplicationDetails } from '@/pages/ApplicationDetails'
 import { ApplicationForm } from '@/pages/ApplicationForm'
-import { SystemLandscape } from '@/pages/SystemLandscape'
-import { Insights } from '@/pages/Insights'
 import { Security } from '@/pages/Security'
 import { Teams } from '@/pages/Teams'
 import { TeamDetails } from '@/pages/TeamDetails'
@@ -28,8 +26,6 @@ function App() {
               <Route path="applications/new" element={<ApplicationForm />} />
               <Route path="applications/:id" element={<ApplicationDetails />} />
               <Route path="applications/:id/edit" element={<ApplicationForm />} />
-              <Route path="landscape" element={<SystemLandscape />} />
-              <Route path="insights" element={<Insights />} />
               <Route path="security" element={<Security />} />
               <Route path="teams" element={<Teams />} />
               <Route path="teams/new" element={<TeamForm />} />

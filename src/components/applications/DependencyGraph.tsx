@@ -32,19 +32,6 @@ interface DependencyGraphProps {
   applicationId: string
 }
 
-const getCriticalityColor = (criticality: string) => {
-  switch (criticality) {
-    case 'P1':
-      return '#ef4444'
-    case 'P2':
-      return '#f59e0b'
-    case 'P3':
-      return '#6b7280'
-    default:
-      return '#3b82f6'
-  }
-}
-
 const getDatastoreColor = (type: string) => {
   switch (type) {
     case 'postgresql':
@@ -151,11 +138,10 @@ export function DependencyGraph({ applicationId }: DependencyGraphProps) {
       const x = startX + indexAtLevel * (NODE_WIDTH + HORIZONTAL_SPACING)
 
       const isTarget = app.id === applicationId
-      const criticalityColor = getCriticalityColor(app.criticality)
 
       const nodeStyle = {
-        background: isTarget ? criticalityColor : 'hsl(var(--color-card))',
-        border: `3px solid ${criticalityColor}`,
+        background: isTarget ? '#3b82f6' : 'hsl(var(--color-card))',
+        border: `3px solid #3b82f6`,
         borderRadius: 12,
         padding: '12px 16px',
         boxShadow: isTarget
@@ -176,7 +162,7 @@ export function DependencyGraph({ applicationId }: DependencyGraphProps) {
                 {app.name}
               </div>
               <div className={`text-xs mt-1 font-semibold ${isTarget ? 'text-primary-foreground/90' : 'text-muted-foreground'}`}>
-                {app.criticality} • {app.department}
+                {app.department}
               </div>
             </div>
           ),
@@ -197,10 +183,10 @@ export function DependencyGraph({ applicationId }: DependencyGraphProps) {
           animated: isTarget,
           markerEnd: {
             type: MarkerType.ArrowClosed,
-            color: getCriticalityColor(dep.criticality),
+            color: '#3b82f6'
           },
           style: {
-            stroke: getCriticalityColor(dep.criticality),
+            stroke: '#3b82f6',
             strokeWidth: isTarget ? 3 : 2,
           },
           label: 'depends on',

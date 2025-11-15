@@ -5,24 +5,19 @@ import { Application } from '@/types/application'
 interface FilterPanelProps {
   applications: Application[]
   selectedDepartments: string[]
-  selectedCriticality: string[]
   selectedTags: string[]
   onDepartmentsChange: (departments: string[]) => void
-  onCriticalityChange: (criticality: string[]) => void
   onTagsChange: (tags: string[]) => void
 }
 
 export function FilterPanel({
   applications,
   selectedDepartments,
-  selectedCriticality,
   selectedTags,
   onDepartmentsChange,
-  onCriticalityChange,
   onTagsChange,
 }: FilterPanelProps) {
   const departments = Array.from(new Set(applications.map((app) => app.department))).sort()
-  const criticalities = ['P1', 'P2', 'P3']
   const allTags = Array.from(new Set(applications.flatMap((app) => app.tags))).sort()
 
   const toggleFilter = (value: string, selected: string[], onChange: (values: string[]) => void) => {
@@ -56,29 +51,7 @@ export function FilterPanel({
           </div>
         </div>
 
-        <div>
-          <h3 className="text-sm font-medium mb-3">Criticality</h3>
-          <div className="space-y-2">
-            {criticalities.map((crit) => (
-              <label key={crit} className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={selectedCriticality.includes(crit)}
-                  onChange={() => toggleFilter(crit, selectedCriticality, onCriticalityChange)}
-                  className="rounded border-gray-300"
-                />
-                <Badge
-                  variant={
-                    crit === 'P1' ? 'destructive' : crit === 'P2' ? 'warning' : 'secondary'
-                  }
-                  className="text-xs"
-                >
-                  {crit}
-                </Badge>
-              </label>
-            ))}
-          </div>
-        </div>
+
 
         <div>
           <h3 className="text-sm font-medium mb-3">Tags</h3>
@@ -97,12 +70,10 @@ export function FilterPanel({
         </div>
 
         {(selectedDepartments.length > 0 ||
-          selectedCriticality.length > 0 ||
           selectedTags.length > 0) && (
           <button
             onClick={() => {
               onDepartmentsChange([])
-              onCriticalityChange([])
               onTagsChange([])
             }}
             className="text-sm text-primary hover:underline"

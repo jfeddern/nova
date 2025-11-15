@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { LayoutGrid, Users, Info, Sparkles, Sun, Moon, Satellite, TrendingUp, Shield, Network, Package } from 'lucide-react'
+import { LayoutGrid, Users, Info, Sparkles, Sun, Moon, Satellite, Shield, Package } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/contexts/ThemeContext'
 import { Button } from '@/components/ui/button'
@@ -10,10 +10,8 @@ export function NavBar() {
 
   const navItems = [
     { path: '/', label: 'Applications', icon: LayoutGrid },
-    { path: '/landscape', label: 'Landscape', icon: Network },
-    { path: '/insights', label: 'Insights', icon: TrendingUp },
-    { path: '/security', label: 'Security', icon: Shield },
     { path: '/teams', label: 'Teams', icon: Users },
+    { path: '/security', label: 'Security', icon: Shield },
     { path: '/platform-inventory', label: 'Platform', icon: Package },
     { path: '/about', label: 'About', icon: Info },
   ]

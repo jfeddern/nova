@@ -10,7 +10,7 @@ The Nova - provides a centralized platform for discovering, understanding, and m
 
 ### Core Functionality
 - **Application Catalog Dashboard** - Browse all applications with searchable, sortable table and card views
-- **Advanced Search & Filtering** - Filter by department, criticality, tags, and search across multiple fields
+- **Advanced Search & Filtering** - Filter by department, tags, and search across multiple fields
 - **Application Details** - Comprehensive view of application metadata, ownership, and resources
 - **Dependency Visualization** - Interactive graph showing service dependencies with click-to-highlight functionality
 - **Team Organization** - View applications grouped by owning teams

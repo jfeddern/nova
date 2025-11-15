@@ -20,17 +20,6 @@ export function ApplicationGrid({ applications }: ApplicationGridProps) {
                 <CardTitle className="text-xl line-clamp-1 group-hover:text-primary transition-colors">
                   {app.name}
                 </CardTitle>
-                <Badge
-                  variant={
-                    app.criticality === 'P1'
-                      ? 'destructive'
-                      : app.criticality === 'P2'
-                        ? 'warning'
-                        : 'secondary'
-                  }
-                >
-                  {app.criticality}
-                </Badge>
               </div>
               <CardDescription className="line-clamp-2 text-base">{app.description}</CardDescription>
             </CardHeader>

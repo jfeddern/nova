@@ -11,7 +11,6 @@ export interface Application {
   domain: string
   owner: Owner
   environment: string
-  criticality: 'P1' | 'P2' | 'P3'
   health: HealthStatus
   tags: string[]
   dependencies: string[]
