@@ -25,7 +25,6 @@ export function ApplicationTable({ applications }: ApplicationTableProps) {
             <TableHead>Department</TableHead>
             <TableHead>Team</TableHead>
             <TableHead>Tags</TableHead>
-            <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -38,10 +37,6 @@ export function ApplicationTable({ applications }: ApplicationTableProps) {
               </TableCell>
               <TableCell>{app.department}</TableCell>
               <TableCell>{app.owner.team}</TableCell>
-
-              <TableCell>
-                <Badge variant="outline">{app.environment}</Badge>
-              </TableCell>
               <TableCell>
                 <div className="flex flex-wrap gap-1">
                   {app.tags.slice(0, 2).map((tag) => (
@@ -55,11 +50,6 @@ export function ApplicationTable({ applications }: ApplicationTableProps) {
                     </Badge>
                   )}
                 </div>
-              </TableCell>
-              <TableCell className="text-right">
-                <Link to={`/applications/${app.id}`}>
-                  <ExternalLink className="h-4 w-4 inline text-muted-foreground hover:text-foreground" />
-                </Link>
               </TableCell>
             </TableRow>
           ))}
