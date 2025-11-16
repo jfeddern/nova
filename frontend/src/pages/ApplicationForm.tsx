@@ -531,6 +531,7 @@ export function ApplicationForm() {
                         onChange={() => toggleDependency(app.id)}
                         className="rounded"
                       />
+                      <span className="font-medium">{app.name}</span>
                     </label>
                   )
                 })}

@@ -2,6 +2,8 @@ import { getApplications } from './applicationService'
 import { getVulnerabilityStats, getAllVulnerabilities } from './vulnerabilityService'
 import { getTeams } from './teamService'
 import { getPlatformTools } from './platformToolService'
+import type { Application } from '@/types/application'
+import type { VulnerabilityStats, Vulnerability } from '@/types/vulnerability'
 
 export interface ChatMessage {
   id: string
@@ -12,11 +14,11 @@ export interface ChatMessage {
 
 interface DataContext {
   applicationCount: number
-  vulnerabilityStats: any
+  vulnerabilityStats: VulnerabilityStats
   teamCount: number
   platformToolCount: number
-  criticalVulns: any[]
-  applications: any[]
+  criticalVulns: Vulnerability[]
+  applications: Application[]
 }
 
 const generateId = () => Math.random().toString(36).substring(2, 15)

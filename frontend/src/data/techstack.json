@@ -1,0 +1,1536 @@
+{
+  "app-001": {
+    "appId": "app-001",
+    "lastIngestion": "2025-01-15T12:42:10Z",
+    "commit": "abc1234",
+    "pipelineUrl": "https://ci.example.com/build/231",
+    "summary": {
+      "health": "warning",
+      "criticalCount": 0,
+      "warningCount": 3,
+      "totalDependencies": 87
+    },
+    "runtimes": [
+      {
+        "language": "node",
+        "runtime": "Node.js",
+        "version": "16.20.0",
+        "status": "eol_soon",
+        "eolDate": "2024-09-11",
+        "notes": "Node.js 16 reached EOL. Upgrade to Node.js 20 LTS recommended."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "React",
+        "version": "18.3.1",
+        "status": "ok"
+      },
+      {
+        "name": "Vite",
+        "version": "5.0.8",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [
+      {
+        "component": "axios",
+        "version": "0.21.1",
+        "status": "warning",
+        "reason": "Outdated version with known issues",
+        "recommendation": "Upgrade to 1.6.0"
+      },
+      {
+        "component": "lodash",
+        "version": "4.17.15",
+        "status": "warning",
+        "reason": "Prototype pollution vulnerability",
+        "recommendation": "Upgrade to 4.17.21"
+      }
+    ],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 87,
+      "records": [
+        {
+          "name": "react",
+          "version": "18.3.1",
+          "scope": "runtime",
+          "purl": "pkg:npm/react@18.3.1",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "18.3.1"
+        },
+        {
+          "name": "axios",
+          "version": "0.21.1",
+          "scope": "runtime",
+          "purl": "pkg:npm/axios@0.21.1",
+          "status": "warning",
+          "issues": ["Outdated version"],
+          "latestVersion": "1.6.0"
+        },
+        {
+          "name": "lodash",
+          "version": "4.17.15",
+          "scope": "runtime",
+          "purl": "pkg:npm/lodash@4.17.15",
+          "status": "warning",
+          "issues": ["CVE-2020-8203"],
+          "latestVersion": "4.17.21"
+        },
+        {
+          "name": "vite",
+          "version": "5.0.8",
+          "scope": "dev",
+          "purl": "pkg:npm/vite@5.0.8",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "5.0.11"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-112",
+        "timestamp": "2025-01-15T12:42:10Z",
+        "commit": "abc1234",
+        "warnings": 3,
+        "critical": 0
+      },
+      {
+        "uploadId": "upload-111",
+        "timestamp": "2025-01-10T09:15:00Z",
+        "commit": "def5678",
+        "warnings": 2,
+        "critical": 0
+      }
+    ],
+    "diff": {
+      "from": "upload-111",
+      "to": "upload-112",
+      "added": ["@tanstack/react-query@5.28.0"],
+      "removed": ["react-query@3.39.3"],
+      "changed": [
+        {
+          "name": "vite",
+          "from": "5.0.5",
+          "to": "5.0.8"
+        }
+      ]
+    }
+  },
+  "app-002": {
+    "appId": "app-002",
+    "lastIngestion": "2025-01-14T08:30:00Z",
+    "commit": "xyz9876",
+    "pipelineUrl": "https://ci.example.com/build/445",
+    "summary": {
+      "health": "critical",
+      "criticalCount": 2,
+      "warningCount": 5,
+      "totalDependencies": 234
+    },
+    "runtimes": [
+      {
+        "language": "java",
+        "runtime": "OpenJDK",
+        "version": "11.0.15",
+        "status": "eol",
+        "eolDate": "2024-10-01",
+        "notes": "Java 11 reached EOL. Immediate upgrade to Java 17 or 21 required."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Spring Boot",
+        "version": "2.5.6",
+        "status": "warning"
+      },
+      {
+        "name": "Hibernate",
+        "version": "5.4.32",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [
+      {
+        "component": "log4j-core",
+        "version": "2.14.0",
+        "status": "critical",
+        "reason": "Known critical CVEs (Log4Shell)",
+        "recommendation": "Upgrade to 2.21.0 immediately"
+      },
+      {
+        "component": "spring-core",
+        "version": "5.3.10",
+        "status": "critical",
+        "reason": "Spring4Shell vulnerability",
+        "recommendation": "Upgrade to 5.3.30"
+      },
+      {
+        "component": "jackson-databind",
+        "version": "2.12.3",
+        "status": "warning",
+        "reason": "Multiple CVEs in older versions",
+        "recommendation": "Upgrade to 2.15.2"
+      }
+    ],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 234,
+      "records": [
+        {
+          "name": "log4j-core",
+          "version": "2.14.0",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.0",
+          "status": "critical",
+          "issues": ["CVE-2021-44228", "CVE-2021-45046"],
+          "latestVersion": "2.21.0"
+        },
+        {
+          "name": "spring-core",
+          "version": "5.3.10",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.springframework/spring-core@5.3.10",
+          "status": "critical",
+          "issues": ["CVE-2022-22965"],
+          "latestVersion": "5.3.30"
+        },
+        {
+          "name": "jackson-databind",
+          "version": "2.12.3",
+          "scope": "runtime",
+          "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.12.3",
+          "status": "warning",
+          "issues": ["CVE-2022-42003"],
+          "latestVersion": "2.15.2"
+        },
+        {
+          "name": "spring-boot",
+          "version": "2.5.6",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.springframework.boot/spring-boot@2.5.6",
+          "status": "warning",
+          "issues": [],
+          "latestVersion": "3.2.1"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-225",
+        "timestamp": "2025-01-14T08:30:00Z",
+        "commit": "xyz9876",
+        "warnings": 5,
+        "critical": 2
+      },
+      {
+        "uploadId": "upload-224",
+        "timestamp": "2024-12-20T14:22:00Z",
+        "commit": "lmn4567",
+        "warnings": 5,
+        "critical": 2
+      }
+    ],
+    "diff": {
+      "from": "upload-224",
+      "to": "upload-225",
+      "added": [],
+      "removed": [],
+      "changed": []
+    }
+  },
+  "app-003": null,
+  "app-004": {
+    "appId": "app-004",
+    "lastIngestion": "2025-01-16T10:00:00Z",
+    "commit": "healthy123",
+    "pipelineUrl": "https://ci.example.com/build/550",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 45
+    },
+    "runtimes": [
+      {
+        "language": "python",
+        "runtime": "CPython",
+        "version": "3.12.1",
+        "status": "ok",
+        "eolDate": "2028-10-02",
+        "notes": "Python 3.12 is actively supported until 2028."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "FastAPI",
+        "version": "0.109.0",
+        "status": "ok"
+      },
+      {
+        "name": "Pydantic",
+        "version": "2.5.3",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 45,
+      "records": [
+        {
+          "name": "fastapi",
+          "version": "0.109.0",
+          "scope": "runtime",
+          "purl": "pkg:pypi/fastapi@0.109.0",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "0.109.0"
+        },
+        {
+          "name": "pydantic",
+          "version": "2.5.3",
+          "scope": "runtime",
+          "purl": "pkg:pypi/pydantic@2.5.3",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "2.5.3"
+        },
+        {
+          "name": "uvicorn",
+          "version": "0.27.0",
+          "scope": "runtime",
+          "purl": "pkg:pypi/uvicorn@0.27.0",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "0.27.0"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-330",
+        "timestamp": "2025-01-16T10:00:00Z",
+        "commit": "healthy123",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": {
+      "from": "upload-329",
+      "to": "upload-330",
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "name": "fastapi",
+          "from": "0.108.0",
+          "to": "0.109.0"
+        }
+      ]
+    }
+  },
+  "app-005": {
+    "appId": "app-005",
+    "lastIngestion": "2025-01-12T16:45:00Z",
+    "commit": "partial456",
+    "pipelineUrl": "https://ci.example.com/build/321",
+    "summary": {
+      "health": "warning",
+      "criticalCount": 0,
+      "warningCount": 1,
+      "totalDependencies": 0
+    },
+    "runtimes": [
+      {
+        "language": "node",
+        "runtime": "Node.js",
+        "version": "20.11.0",
+        "status": "ok",
+        "eolDate": "2026-04-30",
+        "notes": "Node.js 20 LTS is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Express",
+        "version": "4.18.2",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 0,
+      "records": []
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-150",
+        "timestamp": "2025-01-12T16:45:00Z",
+        "commit": "partial456",
+        "warnings": 1,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "auth-service": {
+    "appId": "auth-service",
+    "lastIngestion": "2025-01-16T14:20:00Z",
+    "commit": "auth8899",
+    "pipelineUrl": "https://ci.example.com/build/782",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 156
+    },
+    "runtimes": [
+      {
+        "language": "java",
+        "runtime": "OpenJDK",
+        "version": "17.0.9",
+        "status": "ok",
+        "eolDate": "2029-09-01",
+        "notes": "Java 17 LTS is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Spring Boot",
+        "version": "3.2.1",
+        "status": "ok"
+      },
+      {
+        "name": "Spring Security",
+        "version": "6.2.0",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 156,
+      "records": [
+        {
+          "name": "spring-boot",
+          "version": "3.2.1",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.springframework.boot/spring-boot@3.2.1",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "3.2.1"
+        },
+        {
+          "name": "spring-security-core",
+          "version": "6.2.0",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.springframework.security/spring-security-core@6.2.0",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "6.2.0"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-782",
+        "timestamp": "2025-01-16T14:20:00Z",
+        "commit": "auth8899",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "user-profile-service": {
+    "appId": "user-profile-service",
+    "lastIngestion": "2025-01-15T11:30:00Z",
+    "commit": "profile456",
+    "pipelineUrl": "https://ci.example.com/build/623",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 78
+    },
+    "runtimes": [
+      {
+        "language": "python",
+        "runtime": "CPython",
+        "version": "3.11.7",
+        "status": "ok",
+        "eolDate": "2027-10-24",
+        "notes": "Python 3.11 is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "5.0.1",
+        "status": "ok"
+      },
+      {
+        "name": "Django REST Framework",
+        "version": "3.14.0",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 78,
+      "records": [
+        {
+          "name": "django",
+          "version": "5.0.1",
+          "scope": "runtime",
+          "purl": "pkg:pypi/django@5.0.1",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "5.0.1"
+        },
+        {
+          "name": "djangorestframework",
+          "version": "3.14.0",
+          "scope": "runtime",
+          "purl": "pkg:pypi/djangorestframework@3.14.0",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "3.14.0"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-623",
+        "timestamp": "2025-01-15T11:30:00Z",
+        "commit": "profile456",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "notification-service": {
+    "appId": "notification-service",
+    "lastIngestion": "2025-01-13T09:45:00Z",
+    "commit": "notif123",
+    "pipelineUrl": "https://ci.example.com/build/334",
+    "summary": {
+      "health": "warning",
+      "criticalCount": 0,
+      "warningCount": 2,
+      "totalDependencies": 92
+    },
+    "runtimes": [
+      {
+        "language": "node",
+        "runtime": "Node.js",
+        "version": "18.19.0",
+        "status": "ok",
+        "eolDate": "2025-04-30",
+        "notes": "Node.js 18 LTS is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Express",
+        "version": "4.18.2",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [
+      {
+        "component": "nodemailer",
+        "version": "6.8.0",
+        "status": "warning",
+        "reason": "Outdated version",
+        "recommendation": "Upgrade to 6.9.8"
+      },
+      {
+        "component": "aws-sdk",
+        "version": "2.1200.0",
+        "status": "warning",
+        "reason": "AWS SDK v2 is deprecated",
+        "recommendation": "Migrate to @aws-sdk v3"
+      }
+    ],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 92,
+      "records": [
+        {
+          "name": "express",
+          "version": "4.18.2",
+          "scope": "runtime",
+          "purl": "pkg:npm/express@4.18.2",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "4.18.2"
+        },
+        {
+          "name": "nodemailer",
+          "version": "6.8.0",
+          "scope": "runtime",
+          "purl": "pkg:npm/nodemailer@6.8.0",
+          "status": "warning",
+          "issues": ["Outdated version"],
+          "latestVersion": "6.9.8"
+        },
+        {
+          "name": "aws-sdk",
+          "version": "2.1200.0",
+          "scope": "runtime",
+          "purl": "pkg:npm/aws-sdk@2.1200.0",
+          "status": "warning",
+          "issues": ["SDK v2 deprecated"],
+          "latestVersion": "2.1540.0"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-334",
+        "timestamp": "2025-01-13T09:45:00Z",
+        "commit": "notif123",
+        "warnings": 2,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "payment-gateway": {
+    "appId": "payment-gateway",
+    "lastIngestion": "2025-01-11T16:20:00Z",
+    "commit": "pay7890",
+    "pipelineUrl": "https://ci.example.com/build/891",
+    "summary": {
+      "health": "critical",
+      "criticalCount": 3,
+      "warningCount": 4,
+      "totalDependencies": 189
+    },
+    "runtimes": [
+      {
+        "language": "java",
+        "runtime": "OpenJDK",
+        "version": "11.0.18",
+        "status": "eol",
+        "eolDate": "2024-10-01",
+        "notes": "Java 11 reached EOL. Upgrade required."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Spring Boot",
+        "version": "2.6.8",
+        "status": "warning"
+      },
+      {
+        "name": "Hibernate",
+        "version": "5.6.10",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [
+      {
+        "component": "log4j-core",
+        "version": "2.15.0",
+        "status": "critical",
+        "reason": "Log4Shell vulnerability (CVE-2021-45105)",
+        "recommendation": "Upgrade to 2.21.0"
+      },
+      {
+        "component": "jackson-databind",
+        "version": "2.13.0",
+        "status": "critical",
+        "reason": "Deserialization vulnerability",
+        "recommendation": "Upgrade to 2.15.2"
+      },
+      {
+        "component": "commons-text",
+        "version": "1.9",
+        "status": "critical",
+        "reason": "CVE-2022-42889 - RCE vulnerability",
+        "recommendation": "Upgrade to 1.10.0"
+      }
+    ],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 189,
+      "records": [
+        {
+          "name": "log4j-core",
+          "version": "2.15.0",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.15.0",
+          "status": "critical",
+          "issues": ["CVE-2021-45105"],
+          "latestVersion": "2.21.0"
+        },
+        {
+          "name": "jackson-databind",
+          "version": "2.13.0",
+          "scope": "runtime",
+          "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.13.0",
+          "status": "critical",
+          "issues": ["CVE-2022-42003", "CVE-2022-42004"],
+          "latestVersion": "2.15.2"
+        },
+        {
+          "name": "commons-text",
+          "version": "1.9",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.apache.commons/commons-text@1.9",
+          "status": "critical",
+          "issues": ["CVE-2022-42889"],
+          "latestVersion": "1.11.0"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-891",
+        "timestamp": "2025-01-11T16:20:00Z",
+        "commit": "pay7890",
+        "warnings": 4,
+        "critical": 3
+      }
+    ],
+    "diff": null
+  },
+  "admin-dashboard": {
+    "appId": "admin-dashboard",
+    "lastIngestion": "2025-01-16T08:15:00Z",
+    "commit": "admin555",
+    "pipelineUrl": "https://ci.example.com/build/912",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 112
+    },
+    "runtimes": [
+      {
+        "language": "node",
+        "runtime": "Node.js",
+        "version": "20.11.0",
+        "status": "ok",
+        "eolDate": "2026-04-30",
+        "notes": "Node.js 20 LTS is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Vue",
+        "version": "3.4.15",
+        "status": "ok"
+      },
+      {
+        "name": "Vite",
+        "version": "5.0.11",
+        "status": "ok"
+      },
+      {
+        "name": "Vuetify",
+        "version": "3.4.10",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 112,
+      "records": [
+        {
+          "name": "vue",
+          "version": "3.4.15",
+          "scope": "runtime",
+          "purl": "pkg:npm/vue@3.4.15",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "3.4.15"
+        },
+        {
+          "name": "vuetify",
+          "version": "3.4.10",
+          "scope": "runtime",
+          "purl": "pkg:npm/vuetify@3.4.10",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "3.4.10"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-912",
+        "timestamp": "2025-01-16T08:15:00Z",
+        "commit": "admin555",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "user-directory": {
+    "appId": "user-directory",
+    "lastIngestion": "2025-01-14T13:00:00Z",
+    "commit": "dir9999",
+    "pipelineUrl": "https://ci.example.com/build/445",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 32
+    },
+    "runtimes": [
+      {
+        "language": "go",
+        "runtime": "Go",
+        "version": "1.21.6",
+        "status": "ok",
+        "eolDate": "2025-08-01",
+        "notes": "Go 1.21 is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Gin",
+        "version": "1.9.1",
+        "status": "ok"
+      },
+      {
+        "name": "GORM",
+        "version": "1.25.5",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 32,
+      "records": [
+        {
+          "name": "gin-gonic/gin",
+          "version": "1.9.1",
+          "scope": "runtime",
+          "purl": "pkg:golang/github.com/gin-gonic/gin@1.9.1",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "1.9.1"
+        },
+        {
+          "name": "gorm.io/gorm",
+          "version": "1.25.5",
+          "scope": "runtime",
+          "purl": "pkg:golang/gorm.io/gorm@1.25.5",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "1.25.5"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-445",
+        "timestamp": "2025-01-14T13:00:00Z",
+        "commit": "dir9999",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "reporting-service": {
+    "appId": "reporting-service",
+    "lastIngestion": "2025-01-10T10:30:00Z",
+    "commit": "report777",
+    "pipelineUrl": "https://ci.example.com/build/556",
+    "summary": {
+      "health": "warning",
+      "criticalCount": 0,
+      "warningCount": 2,
+      "totalDependencies": 65
+    },
+    "runtimes": [
+      {
+        "language": "python",
+        "runtime": "CPython",
+        "version": "3.9.18",
+        "status": "eol_soon",
+        "eolDate": "2025-10-05",
+        "notes": "Python 3.9 will reach EOL in October 2025. Plan upgrade to 3.11 or 3.12."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Flask",
+        "version": "2.3.3",
+        "status": "ok"
+      },
+      {
+        "name": "Pandas",
+        "version": "2.1.4",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [
+      {
+        "component": "jinja2",
+        "version": "3.0.0",
+        "status": "warning",
+        "reason": "Outdated version",
+        "recommendation": "Upgrade to 3.1.3"
+      }
+    ],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 65,
+      "records": [
+        {
+          "name": "flask",
+          "version": "2.3.3",
+          "scope": "runtime",
+          "purl": "pkg:pypi/flask@2.3.3",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "3.0.0"
+        },
+        {
+          "name": "jinja2",
+          "version": "3.0.0",
+          "scope": "runtime",
+          "purl": "pkg:pypi/jinja2@3.0.0",
+          "status": "warning",
+          "issues": ["Outdated"],
+          "latestVersion": "3.1.3"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-556",
+        "timestamp": "2025-01-10T10:30:00Z",
+        "commit": "report777",
+        "warnings": 2,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "analytics-engine": {
+    "appId": "analytics-engine",
+    "lastIngestion": "2025-01-16T15:45:00Z",
+    "commit": "analytics123",
+    "pipelineUrl": "https://ci.example.com/build/998",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 203
+    },
+    "runtimes": [
+      {
+        "language": "java",
+        "runtime": "OpenJDK",
+        "version": "21.0.1",
+        "status": "ok",
+        "eolDate": "2031-09-01",
+        "notes": "Java 21 LTS is the latest version."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Spring Boot",
+        "version": "3.2.1",
+        "status": "ok"
+      },
+      {
+        "name": "Apache Kafka",
+        "version": "3.6.1",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 203,
+      "records": [
+        {
+          "name": "spring-boot",
+          "version": "3.2.1",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.springframework.boot/spring-boot@3.2.1",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "3.2.1"
+        },
+        {
+          "name": "kafka-clients",
+          "version": "3.6.1",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.apache.kafka/kafka-clients@3.6.1",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "3.6.1"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-998",
+        "timestamp": "2025-01-16T15:45:00Z",
+        "commit": "analytics123",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "file-storage-service": {
+    "appId": "file-storage-service",
+    "lastIngestion": "2025-01-15T14:10:00Z",
+    "commit": "files432",
+    "pipelineUrl": "https://ci.example.com/build/667",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 28
+    },
+    "runtimes": [
+      {
+        "language": "go",
+        "runtime": "Go",
+        "version": "1.20.12",
+        "status": "ok",
+        "eolDate": "2025-02-01",
+        "notes": "Go 1.20 is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Echo",
+        "version": "4.11.4",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 28,
+      "records": [
+        {
+          "name": "labstack/echo",
+          "version": "4.11.4",
+          "scope": "runtime",
+          "purl": "pkg:golang/github.com/labstack/echo@4.11.4",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "4.11.4"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-667",
+        "timestamp": "2025-01-15T14:10:00Z",
+        "commit": "files432",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "search-service": {
+    "appId": "search-service",
+    "lastIngestion": "2025-01-09T11:20:00Z",
+    "commit": "search666",
+    "pipelineUrl": "https://ci.example.com/build/234",
+    "summary": {
+      "health": "critical",
+      "criticalCount": 4,
+      "warningCount": 8,
+      "totalDependencies": 178
+    },
+    "runtimes": [
+      {
+        "language": "java",
+        "runtime": "OpenJDK",
+        "version": "8u362",
+        "status": "eol",
+        "eolDate": "2022-03-01",
+        "notes": "Java 8 is severely outdated and unsupported. Immediate upgrade required."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Spring Boot",
+        "version": "2.3.12",
+        "status": "warning"
+      },
+      {
+        "name": "Elasticsearch",
+        "version": "7.10.2",
+        "status": "warning"
+      }
+    ],
+    "topIssues": [
+      {
+        "component": "log4j-core",
+        "version": "2.12.1",
+        "status": "critical",
+        "reason": "Multiple Log4Shell CVEs",
+        "recommendation": "Upgrade to 2.21.0 immediately"
+      },
+      {
+        "component": "jackson-databind",
+        "version": "2.11.0",
+        "status": "critical",
+        "reason": "Critical deserialization vulnerabilities",
+        "recommendation": "Upgrade to 2.15.2"
+      },
+      {
+        "component": "commons-collections",
+        "version": "3.2.1",
+        "status": "critical",
+        "reason": "Remote code execution vulnerability",
+        "recommendation": "Upgrade to 4.4"
+      },
+      {
+        "component": "spring-core",
+        "version": "5.2.9",
+        "status": "critical",
+        "reason": "Multiple security vulnerabilities",
+        "recommendation": "Upgrade to 5.3.30"
+      }
+    ],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 178,
+      "records": [
+        {
+          "name": "log4j-core",
+          "version": "2.12.1",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.12.1",
+          "status": "critical",
+          "issues": ["CVE-2021-44228", "CVE-2021-45046", "CVE-2021-45105"],
+          "latestVersion": "2.21.0"
+        },
+        {
+          "name": "jackson-databind",
+          "version": "2.11.0",
+          "scope": "runtime",
+          "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.0",
+          "status": "critical",
+          "issues": ["Multiple CVEs"],
+          "latestVersion": "2.15.2"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-234",
+        "timestamp": "2025-01-09T11:20:00Z",
+        "commit": "search666",
+        "warnings": 8,
+        "critical": 4
+      }
+    ],
+    "diff": null
+  },
+  "billing-service": {
+    "appId": "billing-service",
+    "lastIngestion": "2025-01-16T09:30:00Z",
+    "commit": "bill888",
+    "pipelineUrl": "https://ci.example.com/build/773",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 94
+    },
+    "runtimes": [
+      {
+        "language": "csharp",
+        "runtime": ".NET",
+        "version": "7.0.15",
+        "status": "ok",
+        "eolDate": "2024-05-14",
+        "notes": ".NET 7 is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "ASP.NET Core",
+        "version": "7.0.15",
+        "status": "ok"
+      },
+      {
+        "name": "Entity Framework Core",
+        "version": "7.0.15",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 94,
+      "records": [
+        {
+          "name": "Microsoft.AspNetCore.App",
+          "version": "7.0.15",
+          "scope": "runtime",
+          "purl": "pkg:nuget/Microsoft.AspNetCore.App@7.0.15",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "7.0.15"
+        },
+        {
+          "name": "Microsoft.EntityFrameworkCore",
+          "version": "7.0.15",
+          "scope": "runtime",
+          "purl": "pkg:nuget/Microsoft.EntityFrameworkCore@7.0.15",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "7.0.15"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-773",
+        "timestamp": "2025-01-16T09:30:00Z",
+        "commit": "bill888",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "audit-logger": {
+    "appId": "audit-logger",
+    "lastIngestion": "2025-01-15T16:00:00Z",
+    "commit": "audit321",
+    "pipelineUrl": "https://ci.example.com/build/889",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 38
+    },
+    "runtimes": [
+      {
+        "language": "python",
+        "runtime": "CPython",
+        "version": "3.10.13",
+        "status": "ok",
+        "eolDate": "2026-10-04",
+        "notes": "Python 3.10 is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "FastAPI",
+        "version": "0.108.0",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 38,
+      "records": [
+        {
+          "name": "fastapi",
+          "version": "0.108.0",
+          "scope": "runtime",
+          "purl": "pkg:pypi/fastapi@0.108.0",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "0.109.0"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-889",
+        "timestamp": "2025-01-15T16:00:00Z",
+        "commit": "audit321",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "integration-hub": {
+    "appId": "integration-hub",
+    "lastIngestion": "2025-01-08T14:30:00Z",
+    "commit": "integration999",
+    "pipelineUrl": "https://ci.example.com/build/445",
+    "summary": {
+      "health": "critical",
+      "criticalCount": 1,
+      "warningCount": 3,
+      "totalDependencies": 145
+    },
+    "runtimes": [
+      {
+        "language": "node",
+        "runtime": "Node.js",
+        "version": "14.21.3",
+        "status": "eol",
+        "eolDate": "2023-04-30",
+        "notes": "Node.js 14 reached EOL. Critical upgrade to Node.js 20 required."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Express",
+        "version": "4.17.1",
+        "status": "warning"
+      },
+      {
+        "name": "Socket.IO",
+        "version": "4.5.4",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [
+      {
+        "component": "express",
+        "version": "4.17.1",
+        "status": "critical",
+        "reason": "Multiple security vulnerabilities",
+        "recommendation": "Upgrade to 4.18.2"
+      },
+      {
+        "component": "axios",
+        "version": "0.21.4",
+        "status": "warning",
+        "reason": "Known vulnerabilities",
+        "recommendation": "Upgrade to 1.6.0"
+      },
+      {
+        "component": "moment",
+        "version": "2.29.1",
+        "status": "warning",
+        "reason": "Moment.js is deprecated",
+        "recommendation": "Migrate to date-fns or dayjs"
+      }
+    ],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 145,
+      "records": [
+        {
+          "name": "express",
+          "version": "4.17.1",
+          "scope": "runtime",
+          "purl": "pkg:npm/express@4.17.1",
+          "status": "critical",
+          "issues": ["CVE-2022-24999"],
+          "latestVersion": "4.18.2"
+        },
+        {
+          "name": "axios",
+          "version": "0.21.4",
+          "scope": "runtime",
+          "purl": "pkg:npm/axios@0.21.4",
+          "status": "warning",
+          "issues": ["Outdated"],
+          "latestVersion": "1.6.0"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-445",
+        "timestamp": "2025-01-08T14:30:00Z",
+        "commit": "integration999",
+        "warnings": 3,
+        "critical": 1
+      }
+    ],
+    "diff": null
+  },
+  "mobile-backend": {
+    "appId": "mobile-backend",
+    "lastIngestion": "2025-01-14T12:45:00Z",
+    "commit": "mobile567",
+    "pipelineUrl": "https://ci.example.com/build/712",
+    "summary": {
+      "health": "warning",
+      "criticalCount": 0,
+      "warningCount": 3,
+      "totalDependencies": 167
+    },
+    "runtimes": [
+      {
+        "language": "java",
+        "runtime": "OpenJDK",
+        "version": "17.0.8",
+        "status": "ok",
+        "eolDate": "2029-09-01",
+        "notes": "Java 17 LTS is actively supported."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Spring Boot",
+        "version": "3.1.5",
+        "status": "ok"
+      },
+      {
+        "name": "Spring Data JPA",
+        "version": "3.1.5",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [
+      {
+        "component": "commons-fileupload",
+        "version": "1.4",
+        "status": "warning",
+        "reason": "Known vulnerabilities in file upload",
+        "recommendation": "Upgrade to 1.5"
+      },
+      {
+        "component": "mysql-connector-java",
+        "version": "8.0.28",
+        "status": "warning",
+        "reason": "Outdated MySQL connector",
+        "recommendation": "Upgrade to 8.0.33"
+      }
+    ],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 167,
+      "records": [
+        {
+          "name": "spring-boot",
+          "version": "3.1.5",
+          "scope": "runtime",
+          "purl": "pkg:maven/org.springframework.boot/spring-boot@3.1.5",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "3.2.1"
+        },
+        {
+          "name": "commons-fileupload",
+          "version": "1.4",
+          "scope": "runtime",
+          "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.4",
+          "status": "warning",
+          "issues": ["CVE-2023-24998"],
+          "latestVersion": "1.5"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-712",
+        "timestamp": "2025-01-14T12:45:00Z",
+        "commit": "mobile567",
+        "warnings": 3,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  },
+  "email-service": {
+    "appId": "email-service",
+    "lastIngestion": "2025-01-16T11:00:00Z",
+    "commit": "email777",
+    "pipelineUrl": "https://ci.example.com/build/834",
+    "summary": {
+      "health": "ok",
+      "criticalCount": 0,
+      "warningCount": 0,
+      "totalDependencies": 82
+    },
+    "runtimes": [
+      {
+        "language": "python",
+        "runtime": "CPython",
+        "version": "3.12.1",
+        "status": "ok",
+        "eolDate": "2028-10-02",
+        "notes": "Python 3.12 is the latest stable version."
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Django",
+        "version": "5.0.1",
+        "status": "ok"
+      },
+      {
+        "name": "Celery",
+        "version": "5.3.4",
+        "status": "ok"
+      }
+    ],
+    "topIssues": [],
+    "components": {
+      "page": 1,
+      "pageSize": 20,
+      "total": 82,
+      "records": [
+        {
+          "name": "django",
+          "version": "5.0.1",
+          "scope": "runtime",
+          "purl": "pkg:pypi/django@5.0.1",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "5.0.1"
+        },
+        {
+          "name": "celery",
+          "version": "5.3.4",
+          "scope": "runtime",
+          "purl": "pkg:pypi/celery@5.3.4",
+          "status": "ok",
+          "issues": [],
+          "latestVersion": "5.3.4"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "uploadId": "upload-834",
+        "timestamp": "2025-01-16T11:00:00Z",
+        "commit": "email777",
+        "warnings": 0,
+        "critical": 0
+      }
+    ],
+    "diff": null
+  }
+}

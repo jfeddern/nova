@@ -11,7 +11,7 @@ export function NavBar() {
   const navItems = [
     { path: '/', label: 'Applications', icon: LayoutGrid },
     { path: '/teams', label: 'Teams', icon: Users },
-    { path: '/security', label: 'Security', icon: Shield },
+    { path: '/security', label: 'Security & Tech Stack', icon: Shield },
     { path: '/platform-inventory', label: 'Platform', icon: Package },
     { path: '/about', label: 'About', icon: Info },
   ]

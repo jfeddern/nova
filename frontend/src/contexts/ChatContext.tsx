@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, ReactNode } from 'react'
 import { ChatMessage, sendChatMessage } from '@/services/aiService'
 
@@ -41,7 +42,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     try {
       const assistantMessage = await sendChatMessage(content)
       setMessages((prev) => [...prev, assistantMessage])
-    } catch (error) {
+    } catch {
       const errorMessage: ChatMessage = {
         id: Math.random().toString(36).substring(2, 15),
         role: 'assistant',

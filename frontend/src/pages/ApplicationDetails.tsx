@@ -1,13 +1,16 @@
 import { useParams, Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import { getApplicationById, getApplications } from '@/services/applicationService'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { DependencyGraph } from '@/components/applications/DependencyGraph'
-import { VulnerabilityPanel } from '@/components/vulnerabilities/VulnerabilityPanel'
-import KnownIssuesTab from '@/components/KnownIssues/KnownIssuesTab'
+
+// Lazy load heavy tab components
+const DependencyGraph = lazy(() => import('@/components/applications/DependencyGraph').then(m => ({ default: m.DependencyGraph })))
+const VulnerabilityPanel = lazy(() => import('@/components/vulnerabilities/VulnerabilityPanel').then(m => ({ default: m.VulnerabilityPanel })))
+const KnownIssuesTab = lazy(() => import('@/components/KnownIssues/KnownIssuesTab'))
+const TechStack = lazy(() => import('@/pages/TechStack').then(m => ({ default: m.TechStack })))
 import {
   ArrowLeft,
   Edit,
@@ -24,9 +27,20 @@ import {
   FileText,
   Shield,
   BookOpen,
+  Package,
 } from 'lucide-react'
 
-type TabType = 'overview' | 'vulnerabilities' | 'known-issues'
+type TabType = 'overview' | 'vulnerabilities' | 'known-issues' | 'tech-stack'
+
+// Loading fallback for tab content
+function TabLoader() {
+  return (
+    <div className="animate-pulse space-y-4">
+      <div className="h-64 bg-accent rounded-lg" />
+      <div className="h-48 bg-accent rounded-lg" />
+    </div>
+  )
+}
 
 export function ApplicationDetails() {
   const { id } = useParams<{ id: string }>()
@@ -79,6 +93,7 @@ export function ApplicationDetails() {
     { id: 'overview' as TabType, label: 'Overview', icon: FileText },
     { id: 'vulnerabilities' as TabType, label: 'Vulnerabilities', icon: Shield },
     { id: 'known-issues' as TabType, label: 'Known Issues', icon: BookOpen },
+    { id: 'tech-stack' as TabType, label: 'Tech Stack', icon: Package },
   ]
 
   return (
@@ -367,21 +382,33 @@ export function ApplicationDetails() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <DependencyGraph applicationId={application.id} />
+              <Suspense fallback={<TabLoader />}>
+                <DependencyGraph applicationId={application.id} />
+              </Suspense>
             </CardContent>
           </Card>
         </div>
       )}
 
       {activeTab === 'vulnerabilities' && (
-        <VulnerabilityPanel applicationId={application.id} />
+        <Suspense fallback={<TabLoader />}>
+          <VulnerabilityPanel applicationId={application.id} />
+        </Suspense>
       )}
 
       {activeTab === 'known-issues' && (
-        <KnownIssuesTab
-          applicationId={application.id}
-          ownerTeam={application.owner.team}
-        />
+        <Suspense fallback={<TabLoader />}>
+          <KnownIssuesTab
+            applicationId={application.id}
+            ownerTeam={application.owner.team}
+          />
+        </Suspense>
+      )}
+
+      {activeTab === 'tech-stack' && (
+        <Suspense fallback={<TabLoader />}>
+          <TechStack />
+        </Suspense>
       )}
     </div>
   )
