@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git mv:*)",
+      "Bash(if [ -d node_modules ])",
+      "Bash(then mv node_modules frontend/)",
+      "Bash(fi)",
+      "Bash(if [ -d dist ])",
+      "Bash(then mv dist frontend/)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
