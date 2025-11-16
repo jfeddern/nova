@@ -323,4 +323,4 @@ Observability
 # Priorization
 
 Don't implement the authentication component 2. requirement until now.
-Also don't implement the requirements about the AI chatbot and the systems & admin endpoints
+Also don't implement the requirements about the AI chatbot and the systems & admin endpoints and the Embedding + Search Module (Qdrant)
