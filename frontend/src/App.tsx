@@ -10,6 +10,7 @@ const Dashboard = lazy(() => import('@/pages/Dashboard').then(m => ({ default: m
 const ApplicationDetails = lazy(() => import('@/pages/ApplicationDetails').then(m => ({ default: m.ApplicationDetails })))
 const ApplicationForm = lazy(() => import('@/pages/ApplicationForm').then(m => ({ default: m.ApplicationForm })))
 const Security = lazy(() => import('@/pages/Security').then(m => ({ default: m.Security })))
+const ReleaseMonitor = lazy(() => import('@/pages/ReleaseMonitor').then(m => ({ default: m.ReleaseMonitor })))
 const Teams = lazy(() => import('@/pages/Teams').then(m => ({ default: m.Teams })))
 const TeamDetails = lazy(() => import('@/pages/TeamDetails').then(m => ({ default: m.TeamDetails })))
 const TeamForm = lazy(() => import('@/pages/TeamForm').then(m => ({ default: m.TeamForm })))
@@ -46,6 +47,7 @@ function App() {
                   <Route path="applications/:id" element={<ApplicationDetails />} />
                   <Route path="applications/:id/edit" element={<ApplicationForm />} />
                   <Route path="security" element={<Security />} />
+                  <Route path="release-monitor" element={<ReleaseMonitor />} />
                   <Route path="teams" element={<Teams />} />
                   <Route path="teams/new" element={<TeamForm />} />
                   <Route path="teams/:id" element={<TeamDetails />} />

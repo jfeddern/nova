@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { LayoutGrid, Users, Info, Sparkles, Sun, Moon, Satellite, Shield, Package } from 'lucide-react'
+import { LayoutGrid, Users, Info, Sparkles, Sun, Moon, Satellite, Shield, Package, Bell } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useTheme } from '@/contexts/ThemeContext'
 import { Button } from '@/components/ui/button'
@@ -12,6 +12,7 @@ export function NavBar() {
     { path: '/', label: 'Applications', icon: LayoutGrid },
     { path: '/teams', label: 'Teams', icon: Users },
     { path: '/security', label: 'Security & Tech Stack', icon: Shield },
+    { path: '/release-monitor', label: 'Release Monitor', icon: Bell },
     { path: '/platform-inventory', label: 'Platform', icon: Package },
     { path: '/about', label: 'About', icon: Info },
   ]
